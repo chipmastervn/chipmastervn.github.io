@@ -4,7 +4,7 @@
             <div class="col-12 text-center">
                 <h2 class="section-title">Có thể bạn quan tâm</h2>
             </div>
-            <div class="col-lg-11 mx-auto relevant-slider">
+            <div class="col-lg-10 mx-auto relevant-slider">
                 {% for category in site.categories %}
                 {% capture category_name %}{{ category | first }}{% endcapture %}
                 {% if category_name == "Blogs" %}
@@ -23,7 +23,7 @@
                 {% endif %}
                 {% endfor %}
             </div>
-            <div class="col-lg-11 mx-auto relevant-slider">
+            <div class="col-lg-10 mx-auto relevant-slider">
                 {% for category in site.categories %}
                 {% capture category_name %}{{ category | first }}{% endcapture %}
                 {% if category_name == "Course" %}

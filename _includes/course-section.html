@@ -5,7 +5,7 @@
       <div class="col-12 text-center">
         <h2 class="section-title">Khóa học</h2>
       </div>
-      <div class="col-lg-12 mx-auto courses-slider">
+      <div class="col-lg-10 mx-auto courses-slider">
         {% for category in site.categories %}
         {% capture category_name %}{{ category | first }}{% endcapture %}
         {% if category_name == "Course" %}
