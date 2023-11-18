@@ -103,7 +103,7 @@
     dots: true,
     infinite: true,
     speed: 300,
-    slidesToShow: 2,
+    slidesToShow: 3,
     arrows: false,
     adaptiveHeight: true,
     slidesToScroll: 1,
