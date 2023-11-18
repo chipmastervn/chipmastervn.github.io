@@ -3,7 +3,7 @@
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.data.settings.title }}{% endif %}</title>
 
   <!-- mobile responsive meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=5.0">
   <meta name="description" content="{%if page.description%}{{page.description}}{%else%}{{site.data.settings.description}}{%endif%}">
   
   <!-- theme meta -->
@@ -11,7 +11,7 @@
 
     
   {% if site.author %}
-  <meta name="author" content="{{ . }}">
+  <meta name="author" content="chipmastervn">
   {% endif %}
   
   <!-- ** Plugins Needed for the Project ** -->
