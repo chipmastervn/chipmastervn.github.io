@@ -56,9 +56,11 @@ social:
 
 # About Section
 blurb: ChipMaster Việt Nam là một chương trình đào tạo chuyên sâu nhằm trang bị cho bạn những kỹ năng và kiến thức cần thiết để thiết kế và phát triển các vi mạch điện tử phức tạp. Vi mạch là cơ sở của hầu hết các thiết bị điện tử hiện đại, từ máy tính đến điện thoại di động và hệ thống nhúng, IoT và chúng tôi sẽ giúp bạn hiểu và áp dụng các nguyên tắc thiết kế vi mạch toàn trình để tạo ra các sản phẩm đột phá.
-
 blurb-btn-link: "/about"
 blurb-btn-name: Về Chúng Tôi
+
+categories-btn-link: "/categories"
+categories-btn-name: Danh Mục Bài Viết&#128072
 
 # About Page
 

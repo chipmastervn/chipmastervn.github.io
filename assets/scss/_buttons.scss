@@ -53,7 +53,6 @@
   }
 }
 
-
 .btn-transparent {
   background: transparent;
   // color: $primary-color;
@@ -65,4 +64,10 @@
     // color: $primary-color;
     color: $click-word-color;
   }
+}
+
+.btn-categories {
+  font-size: 30px;
+  font-family: $secondary-font;
+  text-transform: capitalize;
 }

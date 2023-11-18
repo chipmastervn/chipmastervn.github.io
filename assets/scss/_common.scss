@@ -293,3 +293,58 @@ textarea.form-control{
   color: $click-word-color !important;
 }
 /* /title */
+
+/* Categories */
+.post-tag{
+  background: $white;
+  font-size: 25px;
+  // font-family: $secondary-font !important;
+  // font-weight: bold;
+  color: $secondary-color;
+  
+  &:active {
+    background: lighten($color: $primary-color, $amount: 10) !important;
+  }
+
+  &:hover {
+    background: lighten($color: $primary-color, $amount: 10);
+    color: $click-word-color;
+  }
+
+  &.focus,
+  &.active {
+    background: lighten($color: $primary-color, $amount: 10) !important;
+    box-shadow: none !important;
+    color: $click-word-color !important;
+  }
+}
+
+.tags-title-posts{
+  font-size: 25px;
+}
+
+.tags-expo-posts{
+  background: $white;
+  font-size: 20px;
+  // font-family: $secondary-font !important;
+  // font-weight: bold;
+  color: $text-color-light;
+  
+  &:active {
+    background: lighten($color: $primary-color, $amount: 10) !important;
+  }
+
+  &:hover {
+    background: lighten($color: $primary-color, $amount: 10);
+    color: $click-word-color;
+  }
+
+  &.focus,
+  &.active {
+    background: lighten($color: $primary-color, $amount: 10) !important;
+    box-shadow: none !important;
+    color: $click-word-color !important;
+  }
+}
+
+/* /Categories */
