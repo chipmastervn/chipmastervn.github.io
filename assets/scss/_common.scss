@@ -301,10 +301,6 @@ textarea.form-control{
   // font-family: $secondary-font !important;
   // font-weight: bold;
   color: $secondary-color;
-  
-  &:active {
-    background: lighten($color: $primary-color, $amount: 10) !important;
-  }
 
   &:hover {
     background: lighten($color: $primary-color, $amount: 10);
@@ -329,22 +325,6 @@ textarea.form-control{
   // font-family: $secondary-font !important;
   // font-weight: bold;
   color: $text-color-light;
-  
-  &:active {
-    background: lighten($color: $primary-color, $amount: 10) !important;
-  }
-
-  &:hover {
-    background: lighten($color: $primary-color, $amount: 10);
-    color: $click-word-color;
-  }
-
-  &.focus,
-  &.active {
-    background: lighten($color: $primary-color, $amount: 10) !important;
-    box-shadow: none !important;
-    color: $click-word-color !important;
-  }
 }
 
 /* /Categories */
