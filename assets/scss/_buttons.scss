@@ -71,3 +71,17 @@
   font-family: $secondary-font;
   text-transform: capitalize;
 }
+
+.btn-fanpage {
+  background: transparent;
+  color: $white;
+  font-weight: bold;
+  font-size: 22px;
+  font-family: $secondary-font;
+  // text-transform: capitalize;
+
+  // &:active,
+  &:hover {
+    color: $click-word-color;
+  }
+}
