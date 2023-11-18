@@ -1,11 +1,12 @@
 ---
 layout: post
-title:  Tổng quan giao thức AMBA-AHB trong Vi Mạch Bán Dẫn
+title:  Tổng quan giao thức AMBA-AHB
 date:   2023-11-08 00:51:55 +7
 image:  /assets/images/blog/post-blog-4.png
 author: chipmastervn
 tags:   Bus-SoC
 categories: Blogs
+summary: Những điều cần chú ý về giao thức AMBA-AHB trong Vi Mạch Bán Dẫn.
 ---
 
 **Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.**
