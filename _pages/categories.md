@@ -4,7 +4,7 @@ title: Danh Mục Bài Viết
 ---
 <section class="section">
   <div class="container">
-  <h2 class="title-color-2 font-tertiary">Mục Lục</h2>
+  <h3 class="title-color-2 font-tertiary">Mục Lục</h3>
     {% for tag in site.tags %}
       <div class="row">
         <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
