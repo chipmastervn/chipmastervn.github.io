@@ -3,23 +3,24 @@
   <div class="section">
     <div class="container">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6">
           <h4 class="text-footer">Email</h4>
           <p class="text-white paragraph-lg font-secondary">{{ site.data.settings.email }}</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
           <h4 class="text-footer">Số điện thoại</h4>
           <p class="text-white paragraph-lg font-secondary">{{ site.data.settings.phone }}</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
+          <h4 class="text-footer">Facebook</h4>
+          <a href="{{ site.data.settings.facebook-link }}" class="paragraph-lg font-secondary navbar-nav ml-auto nav-item nav-link">{{ site.data.settings.facebook }}</a>
+        </div>
+        <div class="col-md-6">
           <h4 class="text-footer">Địa chỉ</h4>
           <p class="text-white paragraph-lg font-secondary">{{ site.data.settings.address }}</p>
         </div>
       </div>
     </div>
-  </div>
-  <div class="border-top text-center border-dark py-5">
-    <p class="mb-0 text-footer">{{site.data.settings.copyright | markdownify}}</p>
   </div>
 </footer>
 <!-- /footer -->
