@@ -1,0 +1,16 @@
+---
+layout: page
+title: Tìm Kiếm
+---
+
+<section class="section">
+    <div class="container">
+        {% if site.search == true %}
+            <div class="search-content">
+            {% include search/search_form.html %}
+            </div>
+        {% endif %}
+        {% include search/scripts.html %}
+    </div>
+</section>
+

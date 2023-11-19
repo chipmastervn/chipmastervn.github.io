@@ -32,3 +32,10 @@ exclude:
   - LICENSE.text
   - README.md
   - SECURITY.md
+
+# Site search 
+search                   : true # true, false (default)
+search_full_content      : true # true, false (default)
+search_provider          : "lunr"
+lunr:
+  search_within_pages: true

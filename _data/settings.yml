@@ -21,6 +21,7 @@ menu:
   - { name: BLOG, link: "/blog" }
   - { name: TIN TỨC, link: "/news" }
   - { name: LIÊN HỆ, link: "/contact" }
+  - { name: "&#128270", link: "/search" }
 
 #-------------------------------
 # Google Analytics Section
