@@ -119,7 +119,7 @@ Một số lưu ý:
 
   ![alt text](/assets/images/blog/post-blog-4.png "Title")
   
-  ```
+  ```markdown
   -Example ![alt text](/assets/images/blog/post-blog-4.png "Title")
   ```
 
