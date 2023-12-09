@@ -4,7 +4,8 @@ title:  Thiết kế Vi Mạch Bán Dẫn
 date:   2023-10-08 09:54:55 +7
 image:  /assets/images/courses/post-courses-2.png
 author: chipmastervn
-tags:   Full-Flow
+tags:   
+- "Khóa học toàn trình"
 categories: Course
 ---
 

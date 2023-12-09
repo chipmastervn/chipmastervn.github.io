@@ -8,7 +8,6 @@ title: Danh Mục Bài Viết
     {% for tag in site.tags %}
       <div class="row">
         <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
-      <br>
       </div>
     {% endfor %}
   <hr/>
@@ -19,12 +18,12 @@ title: Danh Mục Bài Viết
       <!-- <li> -->
       <div>
         <span style="float: left;">
-          <a href="{{ post.url }}">{{ post.title }}</a>
+          <a class="btn-primary btn-transparent" href="{{ post.url }}">{{ post.title }}</a>
         </span>
-       <span style="float: right;">
+        <span style="float: right;">
           {{ post.date | date_to_string }}
         </span>
-        </div>
+      </div>
         <br>
       <!-- </li> -->
       <!-- </a> -->

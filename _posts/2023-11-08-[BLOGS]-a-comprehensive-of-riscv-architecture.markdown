@@ -4,7 +4,8 @@ title:  Tổng quan về kiến trúc RISC-V trong Vi Mạch Bán Dẫn
 date:   2023-11-11 09:51:55 +7
 image:  /assets/images/blog/post-blog-3.png
 author: chipmastervn
-tags:   CPU-Architecture
+tags:   
+- CPU Architecture
 categories: Blogs
 ---
 

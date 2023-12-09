@@ -4,7 +4,8 @@ title:  Lập trình FPGA
 date:   2023-10-08 19:53:55 +7
 image:  /assets/images/courses/post-courses-4.png
 author: chipmastervn
-tags:   Full-Flow
+tags:   
+- "Khóa học toàn trình"
 categories: Course
 ---
 

@@ -4,7 +4,8 @@ title:  Những điều bạn muốn biết về Teleoperation
 date:   2023-11-11 0:53:00 +7
 image:  /assets/images/news/post-news-3.png
 author: chipmastervn
-tags:   Automotive
+tags:   
+- Công nghệ ô tô
 categories: News
 ---
 

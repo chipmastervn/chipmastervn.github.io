@@ -4,7 +4,8 @@ title:  RISC-V sẽ xuất hiện trên mọi con Chip
 date:   2023-11-11 0:52:00 +7
 image:  /assets/images/news/post-news-2.png
 author: chipmastervn
-tags:   Semiconductors
+tags:   
+- Công nghệ vi mạch
 categories: News
 ---
 

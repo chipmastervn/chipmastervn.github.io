@@ -4,7 +4,8 @@ title:  Mô hình LLM được thử nghiệm thành công trên Autonomous Driv
 date:   2023-11-11 0:51:00 +7
 image:  /assets/images/news/post-news-1.png
 author: chipmastervn
-tags:   Semiconductors
+tags:   
+- Công nghệ vi mạch
 categories: News
 ---
 

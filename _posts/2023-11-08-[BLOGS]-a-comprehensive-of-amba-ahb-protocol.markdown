@@ -4,7 +4,8 @@ title:  Tổng quan giao thức AMBA-AHB
 date:   2023-11-08 00:51:55 +7
 image:  /assets/images/blog/post-blog-4.png
 author: chipmastervn
-tags:   Bus-SoC
+tags:   
+- Bus SoC
 categories: Blogs
 summary: Những điều cần chú ý về giao thức AMBA-AHB trong Vi Mạch Bán Dẫn.
 ---

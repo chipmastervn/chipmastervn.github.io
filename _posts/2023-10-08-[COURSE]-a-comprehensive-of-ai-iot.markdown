@@ -4,7 +4,8 @@ title:  Thiết kế hệ thống IoT và AI
 date:   2023-10-08 15:51:55 +7
 image:  /assets/images/courses/post-courses-3.png
 author: chipmastervn
-tags:   Full-Flow
+tags:
+- "Khóa học toàn trình"
 categories: Course
 ---
 

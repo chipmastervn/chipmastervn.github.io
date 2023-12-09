@@ -4,7 +4,8 @@ title:  Tuyển tập 200 từ vựng Tiếng Anh về Vi Mạch
 date:   2023-11-11 0:52:00 +7
 image:  /assets/images/documents/post-docu-6.png
 author: chipmastervn
-tags:   Review-Sach
+tags:   
+- Giới thiệu sách
 categories: Documents
 ---
 

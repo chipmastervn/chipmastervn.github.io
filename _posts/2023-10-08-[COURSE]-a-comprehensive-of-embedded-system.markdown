@@ -4,7 +4,8 @@ title:  Phân tích và Thiết kế hệ thống Nhúng
 date:   2023-10-07 09:52:55 +7
 image:  /assets/images/courses/post-courses-1.png
 author: chipmastervn
-tags:   Full-Flow
+tags:   
+- "Khóa học toàn trình"
 categories: Course
 ---
 

@@ -4,7 +4,8 @@ title:  Tổng quan về kiến trúc ARM trong Vi Mạch Bán Dẫn
 date:   2023-11-11 10:51:55 +7
 image:  /assets/images/blog/post-blog-2.png
 author: chipmastervn
-tags:   CPU-Architecture
+tags:   
+- CPU Architecture
 categories: Blogs
 ---
 
