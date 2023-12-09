@@ -5,29 +5,17 @@ title: Dịch vụ
 <!-- services -->
 <section class="section">
   <div class="container">
-    <div class="row mb-5">
-      <div class="col-12">
-        <div class="btn-group btn-group-toggle justify-content-center d-flex" data-toggle="buttons">
-          <label class="btn btn-sm btn-primary">
-            <input type="radio" name="shuffle-filter" value="all" checked="checked" />Tất Cả
-          </label>
-          {% for label in site.data.settings.services-label %}
-          <label class="btn btn-sm btn-primary">
-            <input type="radio" name="shuffle-filter" value="{{ label.type }}" />{{ label.title }}
-          </label>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-    <div class="row shuffle-wrapper">
-      {% for item in site.data.settings.services-items %}
-      <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[{% for services in item.services-type %}{% if forloop.first == true %}{% else %},{% endif %}&quot;{{ services.type }}&quot;{% endfor %}]">
-        <div class="position-relative rounded hover-wrapper">
-          <img src="{{ site.baseurl }}/{{ item.image }}" alt="services-image" class="img-fluid rounded w-100 d-block">
-          <div class="hover-overlay">
-            <div class="hover-content">
-              <a class="btn btn-light btn-sm btn-primary" href="{{ item.url }}">Xem thêm</a>
-            </div>
+    <div class="row">
+      {% for service in site.data.settings.services-page %}
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="card hover-shadow shadow">
+          <div class="card-body {% if service.active %}active-bg-primary{% endif %} text-center px-4 py-5">
+            <i class="{{ service.icon }} icon mb-5 d-inline-block"></i>
+            <h4 class="mb-4">{{ service.name }}</h4>
+            <!-- <p>{{ service.description }}</p> -->
+            {% for description in service.description %}
+            <p class="text-left">&#128073 {{ description }}</p>
+            {% endfor %}
           </div>
         </div>
       </div>

@@ -184,86 +184,42 @@ services:
     }
 
 #-------------------------------
-# Documents (Section and Page)
-
-# Documents Home Section
-documents-home-items:
-  - image: "assets/images/portfolio/item-1.png"
-    url: "#"
-
-  - image: "assets/images/portfolio/item-2.png"
-    url: "#"
-
-  - image: "assets/images/portfolio/item-3.png"
-    url: "#"
-
-  - image: "assets/images/portfolio/item-4.png"
-    url: "#"
-
-  - image: "assets/images/portfolio/item-5.png"
-    url: "#"
-
-# Documents Page
-documents-label:
-  - { title: "Tài liệu miễn phí", type: "design" }
-  - { title: "Review Sách", type: "branding" }
-  - { title: "Các Công Cụ Hay Dùng", type: "illustration" }
-
 # Services Page
-services-label:
-  - { title: "Đào Tạo", type: "design" }
-  - { title: "Cung Cấp Giải Pháp", type: "branding" }
-  - { title: "Tư Vấn Dự Án", type: "illustration" }
+services-page:
+  - name: "Cung cấp giải pháp"
+    icon: "ti-settings"
+    description: 
+    - "Lập trình Firmware, Embedded Microcontroler, FPGA" 
+    - "Lập trình RTL, verify IP phục vụ thiết kế vi mạch" 
+    - "Porting Linux, viết device driver" 
+    - "Lập trình Web theo yêu cầu" 
+    - "Đưa ra giải pháp phần cứng và phần mềm cho các hệ thống IoT, AI" 
+    - "Xử lý dữ liệu ảnh, text phục vụ training AI" 
+    - "Viết tool theo yêu cầu" 
+    - "Tìm kĩ sư cho dự án" 
+    active:  # Add true to select section
 
-services-items:
-  - image: "assets/images/portfolio/item-1.png"
-    url: "#"
-    services-type:
-      - type: "design"
-      - type: "illustration"
+  - name: "Đào tạo & Dẫn dắt"
+    icon: "ti-book"
+    description: 
+    - "Các khóa học từ cơ bản đến nâng cao" 
+    - "Khóa học online" 
+    - "Bổ sung kiến thức theo nhu cầu" 
+    - "Hướng dẫn viết CV, sửa CV, làm đầy CV" 
+    - "Tập dượt phỏng vấn bằng tiếng Việt, tiếng Anh, tiếng Nhật" 
+    - "Thi thử bài test chuyên môn, test IQ" 
+    - "Hướng nghiệp, chọn ngành nghề, chọn công ty" 
+    - "Xây dựng lộ trình học tập" 
+    active: true # Add true to select section
 
-  - image: "assets/images/portfolio/item-2.png"
-    url: "#"
-    services-type:
-      - type: "branding"
+  - name: "Tư vấn dự án"
+    icon: "ti-pencil"
+    description: 
+    - "Hướng dẫn sinh viên làm đồ án, project" 
+    - "Hướng dẫn học sinh, sinh viên nghiên cứu khoa học" 
+    - "Hỗ trợ lập trình viên giải quyết khó khăn trong các dự án cá nhân, dự án ở công ty" 
+    active:  # Add true to select section
 
-  - image: "assets/images/portfolio/item-3.png"
-    url: "#"
-    services-type:
-      - type: "illustration"
-
-  - image: "assets/images/portfolio/item-6.png"
-    url: "#"
-    services-type:
-      - type: "design"
-      - type: "branding"
-
-  - image: "assets/images/portfolio/item-8.png"
-    url: "#"
-    services-type:
-      - type: "illustration"
-
-  - image: "assets/images/portfolio/item-5.png"
-    url: "#"
-    services-type:
-      - type: "design"
-
-  - image: "assets/images/portfolio/item-1.png"
-    url: "#"
-    services-type:
-      - type: "branding"
-
-  - image: "assets/images/portfolio/item-3.png"
-    url: "#"
-    services-type:
-      - type: "design"
-      - type: "illustration"
-      - type: "branding"
-
-  - image: "assets/images/portfolio/item-7.png"
-    url: "#"
-    services-type:
-      - type: "illustration"
 
 #-------------------------------
 # Testimonials Section
