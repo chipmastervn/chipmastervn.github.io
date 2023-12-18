@@ -3,7 +3,7 @@
   transition: .3s ease;
   &.nav-bg {
     // background-color: $primary-color;
-    background-color: $gray;
+    background-color: $primary-color;
     padding: 15px 100px;
     @include desktop {
       padding: 15px 20px;
@@ -11,7 +11,7 @@
   }
   @include desktop {
     padding: 20px;
-    background: $primary-color;
+    background: linear-gradient(to right, #e9ecf0, #c8cacd) !important;
   }
 }
 
@@ -28,7 +28,7 @@
     }
     &:hover {
       color: $primary-color;
-      // color: $click-word-color;
+      // color: $text-color-light;
     }
   }
 }

@@ -42,14 +42,14 @@
 
   &:hover {
     background: lighten($color: $primary-color, $amount: 10);
-    color: $click-word-color;
+    color: $text-color-light;
   }
 
   &.focus,
   &.active {
     background: lighten($color: $primary-color, $amount: 10) !important;
     box-shadow: none !important;
-    color: $click-word-color !important;
+    color: $text-color-light !important;
   }
 }
 
@@ -62,7 +62,7 @@
   &:active,
   &:hover {
     // color: $primary-color;
-    color: $click-word-color;
+    color: $text-color-light;
   }
 }
 
@@ -87,6 +87,6 @@
 
   // &:active,
   &:hover {
-    color: $click-word-color;
+    color: $text-color-light;
   }
 }

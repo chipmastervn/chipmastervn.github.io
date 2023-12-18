@@ -10,7 +10,7 @@
 blockquote > p {
   display: inline-block;
   padding: 10px 20px;
-  background: $gray;
+  background: $primary-color;
   border-left: 2px solid $primary-color;
   font-style: italic;
   font-size: 22px;
@@ -26,7 +26,7 @@ blockquote > p {
     font-family: $secondary-font;
     font-size: 22px;
     font-weight: normal;
-    color: $text-color-dark;
+    color: $black;
     display: inherit;
     line-height: 1.5;
   }
