@@ -6,12 +6,20 @@
     background-color: $primary-color;
     padding: 15px 100px;
     @include desktop {
-      padding: 15px 20px;
+      padding: 5px 10px;
+    }
+    
+    @media only screen and (max-width: 1180px) {
+      padding: 10px;
     }
   }
   @include desktop {
-    padding: 20px;
+    padding: 11px;
     background: linear-gradient(to right, #e9ecf0, #c8cacd) !important;
+  }
+
+  @media only screen and (max-width: 1180px) {
+    padding: 10px;
   }
 }
 
@@ -30,6 +38,7 @@
       color: $primary-color;
       // color: $text-color-light;
     }
+    @include desktop {}
   }
 }
 
