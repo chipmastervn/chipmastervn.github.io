@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<!-- page title -->
+<section class="page-title bg-primary position-relative">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <!-- <h1 class="text-white font-tertiary">Blogs</h1> -->
+        <h1 class="title-color-2 font-tertiary">Blogs</h1>
+      </div>
+    </div>
+  </div>
+  <!-- background shapes -->
+  <img src="{{ site.baseurl }}/assets/images/illustrations/page-title.webp" alt="illustrations" class="bg-shape-1 w-100">
+  <img src="{{ site.baseurl }}/assets/images/illustrations/dots-group-cyan.webp" alt="illustrations" class="bg-shape-6">
+</section>
+<!-- /page title -->
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h3 class="font-tertiary mb-5">{{ page.title | escape }}</h3>
+        <p class="font-secondary">{{ page.date | date: '%d/%m/%Y' }} - Viết bởi <span class="title-color-2">{{ page.author }}</span
+            class="text-primary"> - Tag: {% for tag in page.tags %}
+            <a href="{{ site.data.settings.categories-btn-link }}" class="btn-tags btn-transparent">
+              {{ tag }}
+            </a>{% endfor %}
+        </p>
+        <div class="content">
+          <img src="{{page.image | relative_url }}" class="img-fluid rounded float-right mr-5 mb-4" alt="{{page.title}}">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if site.data.settings.disqus-identifier %} {% include disqus-comments.html %} {% endif %}
+
+{% include categories-section.html %}
+{% include relevant-section.html %}

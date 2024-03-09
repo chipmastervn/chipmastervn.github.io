@@ -1,0 +1,36 @@
+---
+layout: page
+title: Blogs
+---
+{% include categories-section.html %}
+
+<!-- blog -->
+<section class="section">
+  {% for category in site.categories %}
+  <div class="container">
+    <div class="row">
+      {% capture category_name %}{{ category | first }}{% endcapture %}
+      {% if category_name == "Blogs" %}
+      {% for post in site.categories[category_name] %}
+      {% include post.html %}
+      {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</section>
+<!-- /blog -->
+
+{% include relevant-section.html %}
+<!-- clients -->
+<!-- <section class="section bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Đối Tác</h2>
+      </div>
+    </div>
+    {% include client-slider.html %}
+  </div>
+</section> -->
+<!-- /clients -->

@@ -1,0 +1,281 @@
+---
+#-------------------------------
+# General Site Settings
+
+title: ChipMaster Việt Nam
+logo: assets/images/logo/logo-home-black.webp
+author: chipmastervn
+description: Unleash the potential of Silicon
+email: chipmastervn@gmail.com
+phone: +84 869 902 096
+address: Dong Anh District, Hanoi, Vietnam
+facebook: ChipMaster Việt Nam
+facebook-link: https://www.facebook.com/profile.php?id=61552506868619
+# copyright: Copyright &copy; 2023 Designed by [Themefisher](https://themefisher.com) & Developed by [Getjekyllthemes](https://getjekyllthemes.com)
+
+menu:
+  - { name: VỀ CHÚNG TÔI, link: "/about" }
+  - { name: KHÓA HỌC, link: "/courses" }
+  - { name: TÀI LIỆU, link: "/documents" }
+  - { name: DỊCH VỤ, link: "/services" }
+  - { name: BLOG, link: "/blog" }
+  - { name: TIN TỨC, link: "/news" }
+  - { name: LIÊN HỆ, link: "/contact" }
+  - { name: "&#128270", link: "/search" }
+
+#-------------------------------
+# Google Analytics Section
+
+# Analytics helps you understand who visits your website.
+# Learn more at: http://support.google.com/analytics/answer/1008065
+
+# NOTE: If you want to use Google Analytics for basic web tracking: Just uncomment and enter your UA-Code here.
+
+google-analytics: # UA-XXXXXX-X
+
+#-------------------------------
+# Comment Section (Disqus)
+
+disqus-identifier: # Add your shortname for Disqus Comment. For example mr-brown
+
+#-------------------------------
+# Hero Section
+
+hero:
+  # hero-title: Xin chào!<br> Chúng tôi là <br> ChipMaster Việt Nam <br>
+  hero-title-1: Xin chào&#128075;<br> Chúng tôi là
+  hero-title-2: ChipMaster Việt Nam <br>
+
+social:
+  - { icon: "ti-facebook", link: "https://www.facebook.com/profile.php?id=61552506868619" }
+  - { icon: "ti-youtube", link: "https://www.youtube.com/channel/UCOGnDzu9lCxjc55izu3rCxg" }
+  - { icon: "ti-github", link: "https://github.com/chipmastervn-hub?tab=repositories" }
+  - { icon: "ti-pinterest", link: "https://pin.it/7vtQl2p" }
+
+#-------------------------------
+# About (Section and Page)
+
+# About Section
+blurb: ChipMaster Việt Nam là một chương trình đào tạo chuyên sâu nhằm trang bị cho bạn những kỹ năng và kiến thức cần thiết để thiết kế và phát triển các vi mạch điện tử phức tạp. Vi mạch là cơ sở của hầu hết các thiết bị điện tử hiện đại, từ máy tính đến điện thoại di động và hệ thống nhúng, IoT và chúng tôi sẽ giúp bạn hiểu và áp dụng các nguyên tắc thiết kế vi mạch toàn trình để tạo ra các sản phẩm đột phá.
+blurb-btn-link: "/about"
+blurb-btn-name: Về Chúng Tôi
+
+categories-btn-link: "/categories"
+categories-btn-name: Danh Mục Bài Viết&#128072
+
+# About Page
+
+# Work Process Section
+work-process:
+  - title: "Chủ động"
+    icon: "assets/images/icons/plan.png"
+    content: "Luôn hướng về phía trước với tinh thần sẵn sàng hành động, phản ứng linh hoạt trong mọi tình huống, luôn đi trước một bước trong việc tìm hiểu nhu cầu học viên, luôn cập nhật kịp thời các công nghệ mới nhất."
+
+  - title: "Sáng tạo"
+    icon: "assets/images/icons/design.png"
+    content: "Không ngừng phát triển và đổi mới trong tư duy và cách làm việc để tìm ra những sản phẩm, dịch vụ, giải pháp công nghệ ưu việt hơn, đón đầu nhu cầu của con người trong tương lai."
+
+  - title: "Tử tế"
+    icon: "assets/images/icons/print.png"
+    content: "Làm những điều tử tế, mang lại giá trị cho khách hàng và đối tác, cho cộng đồ̀ng. Cạnh tranh lành mạnh để cùng nhau xây dựng một tương lai văn minh và tốt đẹp hơn."
+
+# My Team Section
+# team:
+#   - title: "Jack Schenziwe"
+#     image: "assets/images/team/member-1.png"
+#     designation: "Project Manager"
+
+#   - title: "Julias Carlie"
+#     image: "assets/images/team/member-2.png"
+#     designation: "Web Developer"
+
+#   - title: "John Doe"
+#     image: "assets/images/team/member-3.png"
+#     designation: "Designer"
+
+#-------------------------------
+# Skills Section
+
+skills-title: Quan tâm tới
+skills:
+  - { name: Công nghệ phần mềm ô tô - xe tự lái, color: "#fdb157", value: "90%" }
+  - { name: Công nghệ Vi Mạch, color: "#9473e6", value: "80%" }
+  - { name: Công nghệ Robot, color: "#bdecf6", value: "60%" }
+  - { name: Công nghệ IoT & AI, color: "#ffbcaa", value: "70%" }
+
+#-------------------------------
+# Exprerience Section
+
+experience-title: Đào tạo
+experience:
+  - {
+      name: Thiết kế và phân tích hệ thống Nhúng,
+      icon: "icon-1.webp",
+      # date: "Jan 2007 - Feb 2009",
+      # organization: "WEBEX",
+    }
+  - {
+      name: Thiết kế vi mạch,
+      icon: "icon-2.webp",
+      # date: "Mar 2009 - Aug 2014",
+      # organization: "AUGMEDIX",
+    }
+  - {
+      name: Thiết kế hệ thống IoT & AI,
+      icon: "icon-3.webp",
+      # date: "Sep 2014 - Present",
+      # organization: "THEMEFISHER",
+    }
+  - {
+      name: Lập trình FPGA,
+      icon: "icon-4.webp",
+      # date: "Sep 2014 - Present",
+      # organization: "THEMEFISHER",
+    }
+
+#-------------------------------
+# Education Section
+
+education-title: Vì sao nên chọn chúng tôi
+education:
+  - {
+      name: Hình thức học tập linh hoạt - tiết kiệm chi phí,
+      # date: "2006",
+      # organization: "Masassusets Institute of Technology",
+    }
+  - {
+      name: Hệ thống giáo trình chuẩn quốc tế - tài liệu trực tuyến - mã nguồn phong phú cập nhật mới nhất,
+      # date: "2004",
+      # organization: "Harvard University",
+    }
+  - {
+      name: Đội ngũ giảng viên giỏi - giàu kinh nghiệm,
+      # date: "2000",
+      # organization: "Cardiff School",
+    }
+  - {
+      name: Cung cấp giải pháp nhanh - hiệu quả - chi phí hợp lý,
+      # date: "1998",
+      # organization: "Cardiff School",
+    }
+
+#-------------------------------
+# Services Section
+
+services-title: Dịch vụ
+services:
+  - {
+      name: Cung cấp giải pháp phần mềm,
+      icon: ti-palette,
+      description: "Đưa ra giải pháp phần mềm cho hệ thống IoT, AI trên edge device và firmware cho thiết bị nhúng. Chúng tôi thành thạo về Porting Linux, device driver và embedded microcontroler.",
+      active: , # Add true to select section
+    }
+  - {
+      name: Đào tạo nhân lực,
+      icon: ti-vector,
+      description: "Đào tạo nhân lực theo các mảng RTL design, Verilog, C/C++, FPGA phù hợp cho lĩnh vực thiết kế vi mạch, IoT, AI. Đồng thời giúp các học viên rút ngắn thời gian làm quen với dự án thực tế.",
+      active: true, # Add true to select section
+    }
+  - {
+      name: Tư vấn dự án,
+      icon: ti-panel,
+      description: "Hướng dẫn sinh viên làm đồ án. Hỗ trợ lập trình viên giải quyết khó khăn trong các dự án của họ.",
+      active: , # Add true to select section
+    }
+
+#-------------------------------
+# Services Page
+services-page:
+  - name: "Cung cấp giải pháp"
+    icon: "ti-settings"
+    description: 
+    - "Lập trình Firmware, Embedded Microcontroler, FPGA" 
+    - "Lập trình RTL, verify IP phục vụ thiết kế vi mạch" 
+    - "Porting Linux, viết device driver" 
+    - "Lập trình Web theo yêu cầu" 
+    - "Đưa ra giải pháp phần cứng và phần mềm cho các hệ thống IoT, AI" 
+    - "Xử lý dữ liệu ảnh, text phục vụ training AI" 
+    - "Viết tool theo yêu cầu" 
+    - "Tìm kĩ sư cho dự án" 
+    active:  # Add true to select section
+
+  - name: "Đào tạo & Dẫn dắt"
+    icon: "ti-book"
+    description: 
+    - "Các khóa học từ cơ bản đến nâng cao" 
+    - "Khóa học online" 
+    - "Bổ sung kiến thức theo nhu cầu" 
+    - "Hướng dẫn viết CV, sửa CV, làm đầy CV" 
+    - "Tập dượt phỏng vấn bằng tiếng Việt, tiếng Anh, tiếng Nhật" 
+    - "Thi thử bài test chuyên môn, test IQ" 
+    - "Hướng nghiệp, chọn ngành nghề, chọn công ty" 
+    - "Xây dựng lộ trình học tập" 
+    active: true # Add true to select section
+
+  - name: "Tư vấn dự án"
+    icon: "ti-pencil"
+    description: 
+    - "Hướng dẫn sinh viên làm đồ án, project" 
+    - "Hướng dẫn học sinh, sinh viên nghiên cứu khoa học" 
+    - "Hỗ trợ lập trình viên giải quyết khó khăn trong các dự án cá nhân, dự án ở công ty" 
+    active:  # Add true to select section
+
+
+#-------------------------------
+# Testimonials Section
+
+testimonial-items:
+  - name: "Nguyễn Hoàng Dương"
+    image: "assets/images/testimonial/testimonials-1.webp"
+    designation: "Sinh viên"
+    content: "ChipMaster Việt Nam cung cấp một nền tảng vững chắc về lập trình nhúng. Từ các khái niệm cơ bản như vi điều khiển, cảm biến, giao tiếp và điều khiển thiết bị, cho đến các kỹ thuật nâng cao như lập trình trực tiếp trên phần cứng và quản lý tài nguyên, tôi đã có cơ hội hiểu rõ về lập trình nhúng và ứng dụng nó vào các đồ án môn học."
+
+  - name: "Đinh Văn Cường"
+    image: "assets/images/testimonial/testimonials-2.webp"
+    designation: "Người đi làm"
+    content: "ChipMaster Việt Nam đã giới thiệu cho tôi các công cụ và phần mềm phổ biến để thiết kế, mô phỏng và kiểm thử vi mạch. Việc được thực hành và tiếp xúc với các dự án thực tế trên vi mạch đã giúp tôi áp dụng kiến thức lý thuyết vào thực tiễn và phát triển kỹ năng thiết kế cũng như kiểm thử vi mạch."
+
+  - name: "Phan Thanh Hoàng"
+    image: "assets/images/testimonial/testimonials-3.webp"
+    designation: "Sinh viên năm 3"
+    content: "Giảng viên và nhóm hỗ trợ của khóa học đã rất tận tâm và am hiểu về lĩnh vực này. Họ đã truyền đạt kiến thức một cách rõ ràng và tổ chức các hoạt động học tập một cách hợp lý. Tôi đã nhận được sự hỗ trợ và giúp đỡ khi gặp khó khăn trong quá trình học."
+
+#-------------------------------
+# Client Slider Section
+
+# client-slider-items:
+#   - logo: "assets/images/clients-logo/client-logo-1.png"
+#     url: "#"
+
+#   - logo: "assets/images/clients-logo/client-logo-2.png"
+#     url: "#"
+
+#   - logo: "assets/images/clients-logo/client-logo-3.png"
+#     url: "#"
+
+#   - logo: "assets/images/clients-logo/client-logo-4.png"
+#     url: "#"
+
+#   - logo: "assets/images/clients-logo/client-logo-5.png"
+#     url: "#"
+
+#   - logo: "assets/images/clients-logo/client-logo-1.png"
+#     url: "#"
+
+#   - logo: "assets/images/clients-logo/client-logo-2.png"
+#     url: "#"
+
+#   - logo: "assets/images/clients-logo/client-logo-3.png"
+#     url: "#"
+
+#   - logo: "assets/images/clients-logo/client-logo-4.png"
+#     url: "#"
+
+#   - logo: "assets/images/clients-logo/client-logo-5.png"
+#     url: "#"
+
+#-------------------------------
+# Contact Section
+
+contact-title: Đăng Ký Tư Vấn
+contact-email: chipmastervn@gmail.com

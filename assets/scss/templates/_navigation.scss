@@ -1,0 +1,55 @@
+.navigation{
+  padding: 40px 100px 40px 150px; //top - right - bottom - left
+  transition: .3s ease;
+  &.nav-bg {
+    // background-color: $primary-color;
+    background-color: $primary-color;
+    padding: 2px 250px 2px 200px; 
+    @include desktop {
+      padding: 2px 10px;
+    }
+    
+    @media only screen and (max-width: 1180px) {
+      padding: 2px 5px 2px 15px;
+    }
+  }
+  @include desktop {
+    padding: 2px;
+    background: linear-gradient(to right, #e9ecf0, #c8cacd) !important;
+  }
+
+  @media only screen and (max-width: 1180px) {
+    padding: 2px;
+  }
+}
+
+.navbar{
+  .nav-item{
+    .nav-link{
+      font-family: $secondary-font;
+      text-transform: uppercase;
+      padding: 15px;
+      font-weight: bold;
+    }
+    &.active{
+      font-weight: bold;
+    }
+    &:hover {
+      color: $primary-color;
+      // color: $text-color-light;
+    }
+    @include desktop {}
+  }
+}
+
+.navbar-dark .navbar-nav .nav-link{
+  // color: $white;
+  color: $char-color;
+}
+
+.navbar-light .navbar-nav .nav-link{
+  color: $char-color;
+  &:hover {
+    color: $text-color-light;
+  }
+}

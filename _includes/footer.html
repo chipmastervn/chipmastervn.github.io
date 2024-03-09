@@ -1,0 +1,38 @@
+<!-- footer -->
+<footer class="bg-dark footer-section">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h4 class="text-footer">Email</h4>
+          <p class="text-white paragraph-lg font-secondary">{{ site.data.settings.email }}</p>
+        </div>
+        <div class="col-md-6">
+          <h4 class="text-footer">Số điện thoại</h4>
+          <p class="text-white paragraph-lg font-secondary">{{ site.data.settings.phone }}</p>
+        </div>
+        <div class="col-md-6">
+          <h4 class="text-footer">Facebook</h4>
+          <a href="{{ site.data.settings.facebook-link }}" class="btn-fanpage">
+            {{ site.data.settings.facebook }}
+          </a>
+        </div>
+        <div class="col-md-6">
+          <h4 class="text-footer">Địa chỉ</h4>
+          <p class="text-white paragraph-lg font-secondary">{{ site.data.settings.address }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{{ '/assets/js/prism.js' | prepend: site.baseurl }}"></script>
+</footer>
+<!-- /footer -->
+
+
+<!-- JS Plugins -->
+{% for js in site.data.plugins.js %}
+<script src="{{ js | relative_url }}"></script>
+{% endfor %}
+
+<!-- Main Script -->
+<script src="{{ '/assets/js/script.js' | relative_url }}"></script>
