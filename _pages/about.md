@@ -1,7 +1,7 @@
 ---
 layout: about
 title: Về Chúng Tôi
-author: ChipMaster Việt Nam
+author: ChipMasterVN
 image: assets/images/about/author.webp
 # signature: assets/images/about/signature.png
 ---
@@ -26,6 +26,6 @@ Trở thành đơn vị giáo dục công nghệ hàng đầu khu vực. Mục t
 Mọi thắc mắc và góp ý xin liên hệ với chúng tôi tại:
 * Zalo: 0869902096
 * Email: chipmastervn@gmail.com
-* Fanpage: [ChipMaster Việt Nam](https://www.facebook.com/people/ChipMaster-Vi%E1%BB%87t-Nam/61552506868619/)
+* Fanpage: [ChipMaster Việt Nam](https://www.facebook.com/chipmastervn/)
 * TikTok: [chipmastervn](https://www.tiktok.com/@chipmastervn)
-* Youtube: [ChipMaster Việt Nam](https://www.youtube.com/@ChipMasterVN/featured)
+* Youtube: [ChipMasterVN](https://www.youtube.com/@ChipMasterVN/featured)

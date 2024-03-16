@@ -2,7 +2,7 @@
 #-------------------------------
 # General Site Settings
 
-title: ChipMaster Việt Nam
+title: chipmastervn
 logo: assets/images/logo/logo-home-black.webp
 author: chipmastervn
 description: Unleash the potential of Silicon
@@ -10,7 +10,7 @@ email: chipmastervn@gmail.com
 phone: +84 869 902 096
 address: Dong Anh District, Hanoi, Vietnam
 facebook: ChipMaster Việt Nam
-facebook-link: https://www.facebook.com/profile.php?id=61552506868619
+facebook-link: https://www.facebook.com/chipmastervn/
 # copyright: Copyright &copy; 2023 Designed by [Themefisher](https://themefisher.com) & Developed by [Getjekyllthemes](https://getjekyllthemes.com)
 
 menu:
@@ -42,12 +42,11 @@ disqus-identifier: # Add your shortname for Disqus Comment. For example mr-brown
 # Hero Section
 
 hero:
-  # hero-title: Xin chào!<br> Chúng tôi là <br> ChipMaster Việt Nam <br>
   hero-title-1: Xin chào&#128075;<br> Chúng tôi là
-  hero-title-2: ChipMaster Việt Nam <br>
+  hero-title-2: ChipMasterVN <br>
 
 social:
-  - { icon: "ti-facebook", link: "https://www.facebook.com/profile.php?id=61552506868619" }
+  - { icon: "ti-facebook", link: "https://www.facebook.com/chipmastervn/" }
   - { icon: "ti-youtube", link: "https://www.youtube.com/channel/UCOGnDzu9lCxjc55izu3rCxg" }
   - { icon: "ti-github", link: "https://github.com/chipmastervn-hub?tab=repositories" }
   - { icon: "ti-pinterest", link: "https://pin.it/7vtQl2p" }
@@ -56,7 +55,7 @@ social:
 # About (Section and Page)
 
 # About Section
-blurb: ChipMaster Việt Nam là một chương trình đào tạo chuyên sâu nhằm trang bị cho bạn những kỹ năng và kiến thức cần thiết để thiết kế và phát triển các vi mạch điện tử phức tạp. Vi mạch là cơ sở của hầu hết các thiết bị điện tử hiện đại, từ máy tính đến điện thoại di động và hệ thống nhúng, IoT và chúng tôi sẽ giúp bạn hiểu và áp dụng các nguyên tắc thiết kế vi mạch toàn trình để tạo ra các sản phẩm đột phá.
+blurb: ChipMasterVN là một chương trình đào tạo chuyên sâu nhằm trang bị cho bạn những kỹ năng và kiến thức cần thiết để thiết kế và phát triển các vi mạch điện tử phức tạp. Vi mạch là cơ sở của hầu hết các thiết bị điện tử hiện đại, từ máy tính đến điện thoại di động và hệ thống nhúng, IoT và chúng tôi sẽ giúp bạn hiểu và áp dụng các nguyên tắc thiết kế vi mạch toàn trình để tạo ra các sản phẩm đột phá.
 blurb-btn-link: "/about"
 blurb-btn-name: Về Chúng Tôi
 
@@ -228,12 +227,12 @@ testimonial-items:
   - name: "Nguyễn Hoàng Dương"
     image: "assets/images/testimonial/testimonials-1.webp"
     designation: "Sinh viên"
-    content: "ChipMaster Việt Nam cung cấp một nền tảng vững chắc về lập trình nhúng. Từ các khái niệm cơ bản như vi điều khiển, cảm biến, giao tiếp và điều khiển thiết bị, cho đến các kỹ thuật nâng cao như lập trình trực tiếp trên phần cứng và quản lý tài nguyên, tôi đã có cơ hội hiểu rõ về lập trình nhúng và ứng dụng nó vào các đồ án môn học."
+    content: "ChipMasterVN cung cấp một nền tảng vững chắc về lập trình nhúng. Từ các khái niệm cơ bản như vi điều khiển, cảm biến, giao tiếp và điều khiển thiết bị, cho đến các kỹ thuật nâng cao như lập trình trực tiếp trên phần cứng và quản lý tài nguyên, tôi đã có cơ hội hiểu rõ về lập trình nhúng và ứng dụng nó vào các đồ án môn học."
 
   - name: "Đinh Văn Cường"
     image: "assets/images/testimonial/testimonials-2.webp"
     designation: "Người đi làm"
-    content: "ChipMaster Việt Nam đã giới thiệu cho tôi các công cụ và phần mềm phổ biến để thiết kế, mô phỏng và kiểm thử vi mạch. Việc được thực hành và tiếp xúc với các dự án thực tế trên vi mạch đã giúp tôi áp dụng kiến thức lý thuyết vào thực tiễn và phát triển kỹ năng thiết kế cũng như kiểm thử vi mạch."
+    content: "ChipMasterVN đã giới thiệu cho tôi các công cụ và phần mềm phổ biến để thiết kế, mô phỏng và kiểm thử vi mạch. Việc được thực hành và tiếp xúc với các dự án thực tế trên vi mạch đã giúp tôi áp dụng kiến thức lý thuyết vào thực tiễn và phát triển kỹ năng thiết kế cũng như kiểm thử vi mạch."
 
   - name: "Phan Thanh Hoàng"
     image: "assets/images/testimonial/testimonials-3.webp"
