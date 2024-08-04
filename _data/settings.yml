@@ -8,19 +8,19 @@ author: chipmastervn
 description: Unleash the potential of Silicon
 email: chipmastervn@gmail.com
 phone: +84 869 902 096
-address: Dong Anh District, Hanoi, Vietnam
+address: Hanoi, Vietnam
 facebook: ChipMaster Việt Nam
 facebook-link: https://www.facebook.com/chipmastervn/
 # copyright: Copyright &copy; 2023 Designed by [Themefisher](https://themefisher.com) & Developed by [Getjekyllthemes](https://getjekyllthemes.com)
 
 menu:
-  - { name: VỀ CHÚNG TÔI, link: "/about" }
-  - { name: KHÓA HỌC, link: "/courses" }
-  - { name: TÀI LIỆU, link: "/documents" }
-  - { name: DỊCH VỤ, link: "/services" }
-  - { name: BLOG, link: "/blog" }
-  - { name: TIN TỨC, link: "/news" }
-  - { name: LIÊN HỆ, link: "/contact" }
+  - { name: About Me, link: "/about" }
+  - { name: Courses, link: "/courses" }
+  - { name: Documentation, link: "/documents" }
+  - { name: Services, link: "/services" }
+  - { name: Blog, link: "/blog" }
+  - { name: News, link: "/news" }
+  - { name: Contact us, link: "/contact" }
   - { name: "&#128270", link: "/search" }
 
 #-------------------------------
@@ -42,7 +42,7 @@ disqus-identifier: # Add your shortname for Disqus Comment. For example mr-brown
 # Hero Section
 
 hero:
-  hero-title-1: Chào các bạn nhé&#128075;<br> Chúng tôi là
+  hero-title-1: Welcome&#128075;<br> We are
   hero-title-2: ChipMasterVN <br>
 
 social:
@@ -55,16 +55,29 @@ social:
 # About (Section and Page)
 
 # About Section
-blurb: ChipMasterVN là một chương trình đào tạo chuyên sâu nhằm trang bị cho bạn những kỹ năng và kiến thức cần thiết để thiết kế và phát triển các vi mạch điện tử phức tạp. Vi mạch là cơ sở của hầu hết các thiết bị điện tử hiện đại, từ máy tính đến điện thoại di động và hệ thống nhúng, IoT và chúng tôi sẽ giúp bạn hiểu và áp dụng các nguyên tắc thiết kế vi mạch toàn trình để tạo ra các sản phẩm đột phá.
+blurb: ChipMasterVN offers a comprehensive training program designed to equip you with the skills and knowledge essential for designing and developing complex integrated circuits. Integrated circuits are are the basis of modern electronics, powering everything from computers and mobile phones to embedded systems and IoT devices. Our programs will guide you in understanding and applying principled design rules throughout the entire development process, enabling you to create innovative and cutting-edge products.
 blurb-btn-link: "/about"
-blurb-btn-name: Về Chúng Tôi
+blurb-btn-name: About Me
 
 categories-btn-link: "/categories"
-categories-btn-name: Danh Mục Bài Viết&#128072
+categories-btn-name: List of all articles&#128072
 
 # About Page
 
 # Work Process Section
+work-process-en:
+  - title: "Proactive"
+    icon: "assets/images/icons/plan.png"
+    content: "Always look forward with a spirit of readiness to act, react flexibly in all situations, always be one step ahead in understanding student needs, always promptly update the latest technology."
+
+  - title: "Creative"
+    icon: "assets/images/icons/design.png"
+    content: "Continuously develop and innovate in thinking and working methods to find superior products, services, and technological solutions, in anticipation of future human needs."
+
+  - title: "Kindly"
+    icon: "assets/images/icons/print.png"
+    content: "Do kind things, bring value to customers, partners, and the community. Compete healthily to build a better and more civilized future together."
+
 work-process:
   - title: "Chủ động"
     icon: "assets/images/icons/plan.png"
@@ -95,38 +108,38 @@ work-process:
 #-------------------------------
 # Skills Section
 
-skills-title: Quan tâm tới
+skills-title: Technologies
 skills:
-  - { name: Công nghệ phần mềm ô tô - xe tự lái, color: "#fdb157", value: "90%" }
-  - { name: Công nghệ Vi Mạch, color: "#9473e6", value: "80%" }
-  - { name: Công nghệ Robot, color: "#bdecf6", value: "60%" }
-  - { name: Công nghệ IoT & AI, color: "#ffbcaa", value: "70%" }
+  - { name: Automotive - Self Driving Car, color: "#fdb157", value: "90%" }
+  - { name: Semiconductors, color: "#9473e6", value: "80%" }
+  - { name: Internet of Things, color: "#bdecf6", value: "60%" }
+  - { name: AI & Machine Learning, color: "#ffbcaa", value: "70%" }
 
 #-------------------------------
 # Exprerience Section
 
-experience-title: Đào tạo
+experience-title: Training
 experience:
   - {
-      name: Thiết kế và phân tích hệ thống Nhúng,
+      name: Embedded System,
       icon: "icon-1.webp",
       # date: "Jan 2007 - Feb 2009",
       # organization: "WEBEX",
     }
   - {
-      name: Thiết kế vi mạch,
+      name: Semiconductors,
       icon: "icon-2.webp",
       # date: "Mar 2009 - Aug 2014",
       # organization: "AUGMEDIX",
     }
   - {
-      name: Thiết kế hệ thống IoT & AI,
+      name: IoT & AI System,
       icon: "icon-3.webp",
       # date: "Sep 2014 - Present",
       # organization: "THEMEFISHER",
     }
   - {
-      name: Lập trình FPGA,
+      name: FPGA Programming,
       icon: "icon-4.webp",
       # date: "Sep 2014 - Present",
       # organization: "THEMEFISHER",
@@ -135,25 +148,25 @@ experience:
 #-------------------------------
 # Education Section
 
-education-title: Vì sao nên chọn chúng tôi
+education-title: Why choose us
 education:
   - {
-      name: Hình thức học tập linh hoạt - tiết kiệm chi phí,
+      name: Flexible learning format - Cost saving,
       # date: "2006",
       # organization: "Masassusets Institute of Technology",
     }
   - {
-      name: Hệ thống giáo trình chuẩn quốc tế - tài liệu trực tuyến - mã nguồn phong phú cập nhật mới nhất,
+      name: International textbook system - Online documents - Source code with latest updates,
       # date: "2004",
       # organization: "Harvard University",
     }
   - {
-      name: Đội ngũ giảng viên giỏi - giàu kinh nghiệm,
+      name: Experienced Mentors,
       # date: "2000",
       # organization: "Cardiff School",
     }
   - {
-      name: Cung cấp giải pháp nhanh - hiệu quả - chi phí hợp lý,
+      name: Providing fast - Effective - Reasonable cost solutions,
       # date: "1998",
       # organization: "Cardiff School",
     }
@@ -161,29 +174,63 @@ education:
 #-------------------------------
 # Services Section
 
-services-title: Dịch vụ
+services-title: Services
 services:
   - {
-      name: Cung cấp giải pháp phần mềm,
+      name: Providing Solutions,
       icon: ti-palette,
-      description: "Đưa ra giải pháp phần mềm cho hệ thống IoT, AI trên edge device và firmware cho thiết bị nhúng. Chúng tôi thành thạo về Porting Linux, device driver và embedded microcontroler.",
+      description: "Providing software solutions for IoT systems, AI on edge devices and firmware for embedded devices. We are proficient in Porting Linux, device drivers and embedded microcontrolers.",
       active: , # Add true to select section
     }
   - {
-      name: Đào tạo nhân lực,
+      name: Training,
       icon: ti-vector,
-      description: "Đào tạo nhân lực theo các mảng RTL design, Verilog, C/C++, FPGA phù hợp cho lĩnh vực thiết kế vi mạch, IoT, AI. Đồng thời giúp các học viên rút ngắn thời gian làm quen với dự án thực tế.",
+      description: "Training students and young engineers in the fields of RTL design, Verilog, C/C++, FPGA suitable for the field of IC design, IoT, AI. And we also help students shorten the time to get acquainted with real projects.",
       active: true, # Add true to select section
     }
   - {
-      name: Tư vấn dự án,
+      name: Project Consulting,
       icon: ti-panel,
-      description: "Hướng dẫn sinh viên làm đồ án. Hỗ trợ lập trình viên giải quyết khó khăn trong các dự án của họ.",
+      description: "Guide students to do projects. Support programmers in solving difficulties in personal projects.",
       active: , # Add true to select section
     }
 
 #-------------------------------
 # Services Page
+services-page-en:
+  - name: "Providing Solutions"
+    icon: "ti-settings"
+    description: 
+    - "Firmware, Embedded Microcontroler, FPGA development" 
+    - "RTL programming, verify IP for microchip design" 
+    - "Porting Linux, device driver development" 
+    - "Web design" 
+    - "Providing solutions for IoT, AI, systems" 
+    - "Image processing, text OCR for training AI" 
+    - "Develope tools as required" 
+    - "Find engineers for the project" 
+    active:  # Add true to select section
+
+  - name: "Training"
+    icon: "ti-book"
+    description: 
+    - "Guided courses from beginner to advanced level" 
+    - "Online courses" 
+    - "CV writing, review CV, enhanced your skills on CV" 
+    - "Interview practice in English, Vietnamese, Japanese" 
+    - "Take the skills test, IQ test" 
+    - "Career guidance, choosing a career, choosing a company" 
+    - "Build a learning roadmap" 
+    active: true # Add true to select section
+
+  - name: "Project Consulting"
+    icon: "ti-pencil"
+    description: 
+    - "Guide students to do projects" 
+    - "Guide pupils and students in scientific research" 
+    - "Support programmers in solving difficulties in personal projects" 
+    active:  # Add true to select section
+
 services-page:
   - name: "Cung cấp giải pháp"
     icon: "ti-settings"
@@ -224,20 +271,20 @@ services-page:
 # Testimonials Section
 
 testimonial-items:
-  - name: "Nguyễn Hoàng Dương"
+  - name: "Hoang Duong Nguyen"
     image: "assets/images/testimonial/testimonials-1.webp"
-    designation: "Sinh viên"
-    content: "ChipMasterVN cung cấp một nền tảng vững chắc về lập trình nhúng. Từ các khái niệm cơ bản như vi điều khiển, cảm biến, giao tiếp và điều khiển thiết bị, cho đến các kỹ thuật nâng cao như lập trình trực tiếp trên phần cứng và quản lý tài nguyên, tôi đã có cơ hội hiểu rõ về lập trình nhúng và ứng dụng nó vào các đồ án môn học."
+    designation: "Student"
+    content: "ChipMasterVN provides a solid foundation in embedded programming. From basic concepts such as microcontrollers, sensors, communication, and device control, to advanced techniques like direct hardware programming and resource management, I had the opportunity to thoroughly understand embedded programming and apply it to my course projects."
 
-  - name: "Đinh Văn Cường"
+  - name: "Van Cuong Dinh"
     image: "assets/images/testimonial/testimonials-2.webp"
-    designation: "Người đi làm"
-    content: "ChipMasterVN đã giới thiệu cho tôi các công cụ và phần mềm phổ biến để thiết kế, mô phỏng và kiểm thử vi mạch. Việc được thực hành và tiếp xúc với các dự án thực tế trên vi mạch đã giúp tôi áp dụng kiến thức lý thuyết vào thực tiễn và phát triển kỹ năng thiết kế cũng như kiểm thử vi mạch."
+    designation: "Fresher Engineer"
+    content: "ChipMasterVN introduced me to popular tools and software for designing, simulating, and testing microchips. The hands-on experience and exposure to real-world projects on microchips helped me apply theoretical knowledge into practice and develop my skills in microchip design and testing."
 
-  - name: "Phan Thanh Hoàng"
+  - name: "Thanh Hoang Phan"
     image: "assets/images/testimonial/testimonials-3.webp"
-    designation: "Sinh viên năm 3"
-    content: "Giảng viên và nhóm hỗ trợ của khóa học đã rất tận tâm và am hiểu về lĩnh vực này. Họ đã truyền đạt kiến thức một cách rõ ràng và tổ chức các hoạt động học tập một cách hợp lý. Tôi đã nhận được sự hỗ trợ và giúp đỡ khi gặp khó khăn trong quá trình học."
+    designation: "Student"
+    content: "Both the instructors and support team at ChipMasterVN were dedicated and knowledgeable in their field. They imparted knowledge clearly and organized learning activities effectively. I received support and assistance whenever I encountered difficulties during the learning process."
 
 #-------------------------------
 # Client Slider Section
@@ -276,5 +323,5 @@ testimonial-items:
 #-------------------------------
 # Contact Section
 
-contact-title: Đăng Ký Tư Vấn
+contact-title: Register Form
 contact-email: chipmastervn@gmail.com

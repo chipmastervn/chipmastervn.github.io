@@ -19,7 +19,7 @@ summary: Những điều cần chú ý về giao thức AMBA-AHB trong Vi Mạch
 - [5. Simple Transfer](#simple-transfer)
 - [6. Ví dụ thực tế](#vi-du-thuc-te)
 - [7. Tác giả](#tac-gia)
-- [8. Tài liệu tham khảo](#tai-lieu-tham-khao)
+- [8. Documentation](#tai-lieu-tham-khao)
 
 <a name="amba-ahb-la-gi"></a>
 
@@ -52,8 +52,8 @@ Kết nối của các master và các slave với ma trận bus AHB được hi
 
 ### 3. Bus Interconnection
 
-Hai bộ mux dành cho việc ghi dữ liệu và địa chỉ được điều khiển bởi bộ phân xử.
-- Tất cả các bus master điều khiển địa chỉ, dữ liệu ghi và các tín hiệu điều khiển
+Hai bộ mux dành cho việc ghi dữ liệu và Address được điều khiển bởi bộ phân xử.
+- Tất cả các bus master điều khiển Address, dữ liệu ghi và các tín hiệu điều khiển
 - Bộ phân xử xác định các tín hiệu của master nào được chuyển đến các slave
 Một bộ mux được điều khiển bởi central decoder cho việc đọc data
 - Tất cả các bus slave điều khiển data đọc và các tín hiệu phản hồi
@@ -69,7 +69,7 @@ Các master phải được cấp phép để truy cập trước khi truyền d
 - Bộ phân xử chỉ định khi nào master sẽ được cấp phép sử dụng bus
 Một AHB-bus transfer bao gồm
 - Address phase
-   * Một chu kì, trong đó master lái địa chỉ và các tín hiệu điều khiển
+   * Một chu kì, trong đó master lái Address và các tín hiệu điều khiển
   * Chỉ định hướng, độ rộng truyền dữ liệu và xác định liệu transfer có phải là một phần của chuỗi dữ liệu liên tục hay không.
   *  Mỗi address tương ứng với 1-byte data 
 - Data phase
@@ -87,10 +87,10 @@ Tín hiệu phản hồi HRESP[1:0]
 ### 5. Simple Transfer
 
 ![alt text](simple1.PNG "Title")
-Master lái địa chỉ và các tín hiệu điều khiển
+Master lái Address và các tín hiệu điều khiển
 
 ![alt text](simple2.PNG "Title")
-Slave lấy mẫu địa chỉ và các tín hiệu điều khiển. Đồng thời, slave bắt đầu truyền phản hồi
+Slave lấy mẫu Address và các tín hiệu điều khiển. Đồng thời, slave bắt đầu truyền phản hồi
 
 ![alt text](simple3.PNG "Title")
 Master lấy mẫu read data và phản hồi từ slave
@@ -164,6 +164,6 @@ def conv2d(A, W, b, stride=1, pad=0):
 
 <a name="tai-lieu-tham-khao"></a>
 
-### 8. Tài liệu tham khảo
+### 8. Documentation
 
 Code and documentation copyright 2011-2023 the authors.
