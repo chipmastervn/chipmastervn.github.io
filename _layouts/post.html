@@ -7,7 +7,7 @@ layout: default
     <div class="row">
       <div class="col-12 text-center">
         <!-- <h1 class="text-white font-tertiary">Blogs</h1> -->
-        <h1 class="title-color-2 font-tertiary">Blogs</h1>
+        <h1 class="title-color-2 font-tertiary">{{ page.categories}}</h1>
       </div>
     </div>
   </div>
@@ -22,7 +22,7 @@ layout: default
     <div class="row">
       <div class="col-lg-12">
         <h3 class="font-tertiary mb-5">{{ page.title | escape }}</h3>
-        <p class="font-secondary">{{ page.date | date: '%d/%m/%Y' }} - Viết bởi <span class="title-color-2">{{ page.author }}</span
+        <p class="font-secondary">{{ page.date | date: '%d/%m/%Y' }} - Written by <span class="title-color-2">{{ page.author }}</span
             class="text-primary"> - Tag: {% for tag in page.tags %}
             <a href="{{ site.data.settings.categories-btn-link }}" class="btn-tags btn-transparent">
               {{ tag }}

@@ -8,7 +8,7 @@
       <div class="col-lg-10 mx-auto courses-slider">
         {% for category in site.categories %}
         {% capture category_name %}{{ category | first }}{% endcapture %}
-        {% if category_name == "Course" %}
+        {% if category_name == "Courses" %}
         {% for post in site.categories[category_name] offset:0 %}
         {% include post.html %}
         {% endfor %}
