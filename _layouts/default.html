@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{page.title}} | {{site.name}}</title>
+    <!-- <title>{{page.title}} | {{site.name}}</title> -->
 
     {% seo %}
 
@@ -39,12 +39,17 @@
     <!-- Navbar -->
     <nav id="MagicMenu" class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="{{ site.baseurl }}/"><strong>{{site.name}}</strong></a>
+        <!-- <a class="navbar-brand" href="{{ site.baseurl }}/"><strong>{{site.name}}</strong></a> -->
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="navbar-collapse collapse" id="navbarColor02" style="">
             <ul class="navbar-nav mr-auto d-flex align-items-center">
+                <a class="navbar-brand" href="{{ site.baseurl }}/">
+                    <strong>
+                        <img class="rounded" src="{{site.logo}}" alt="{{site.name}}" width="150"/>
+                    </strong>
+                </a>
                {% include menu-header.html %}
             </ul>
             <ul class="navbar-nav ml-auto d-flex align-items-center">
@@ -78,7 +83,7 @@
         <div class="container">
         <div class="row align-items-center justify-content-between">
             <div>
-                <span class="navbar-brand mr-2 mb-0"><strong>Mundana</strong></span>
+                <span class="navbar-brand mr-2 mb-0"><strong>chipmastervn</strong></span>
                 <span>Copyright © <script>document.write(new Date().getFullYear())</script>.</span>
 
                 <!--  Github Repo Star Btn-->
