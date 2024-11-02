@@ -1,8 +1,8 @@
 # Site
 name: 'chipmastervn'
-description: 'Mundana is a free Jekyll theme for awesome people like you, Medium like.'
+description: 'Xin chào, Chúng tôi là ChipMasterVN. Tại đây, chúng tôi viết về chủ đề kĩ thuật và công nghệ. Hy vọng bạn thích nó!'
 logo: assets/images/logo/logo-home.webp
-favicon: 'assets/images/favicon.ico'
+favicon: 'assets/images/favicon.png'
 baseurl: ""
 disqus: 'demowebsite'
 email: 'chipmastervn@gmail.com'
@@ -19,21 +19,13 @@ plugins:
   - jekyll-seo-tag
   
 authors:
-    sal:
-      name:           Sal
-      site:           https://www.wowthemes.net
+    chipmaster:
+      name:           chipmastervn
+      site:           https://www.facebook.com/chipmastervn
       avatar:         assets/images/avatar1.webp
-      bio:            "Hi, I am Sal, the author of Mundana, the theme you're currently previewing. I hope you like it!"
+      bio:            "Xin chào, Chúng tôi là ChipMasterVN. Tại đây, chúng tôi viết về chủ đề kĩ thuật và công nghệ. Hy vọng bạn thích nó!"
       email:          wowthemesnet@gmail.com
-      twitter:        https://twitter.com/wowthemesnet
-
-    jane:
-      name:           Jane
-      site:           https://www.wowthemes.net
-      avatar:         assets/images/avatar2.webp
-      bio:            "Blogger, fashionista, love to explore new ideas and write on my morning coffee!"
-      email:          fakemail@gmail.com
-      twitter:        https://twitter.com/wowthemesnet
+      instagram:        https://www.instagram.com/chipmastervn/
  
 # Defaults
 defaults:
@@ -43,7 +35,7 @@ defaults:
       path: "_posts"
     values:
       layout: post
-      author: sal
+      author: chipmastervn
       avatar: assets/images/avatar1.webp
       
   # all pages

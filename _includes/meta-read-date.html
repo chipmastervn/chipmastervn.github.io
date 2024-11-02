@@ -1,0 +1,22 @@
+<span class="reading-time">
+{% assign day = page.date | date: "%d" %}
+{% assign month = page.date | date: "%-m" %}
+{% assign year = page.date | date: "%Y" %}
+
+{{ day }} 
+{% case month %}
+  {% when '1' %}tháng Một
+  {% when '2' %}tháng Hai
+  {% when '3' %}tháng Ba
+  {% when '4' %}tháng Tư
+  {% when '5' %}tháng Năm
+  {% when '6' %}tháng Sáu
+  {% when '7' %}tháng Bảy
+  {% when '8' %}tháng Tám
+  {% when '9' %}tháng Chín
+  {% when '10' %}tháng Mười
+  {% when '11' %}tháng Mười Một
+  {% when '12' %}tháng Mười Hai
+{% endcase %}, {{ year }}
+  </span>
+      

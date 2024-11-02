@@ -1787,8 +1787,8 @@ fieldset:disabled a.btn {
   border-color: #f54914; }
   .btn-success:hover {
     color: #fff;
-    background-color: #ff914d;
-    border-color: #027657; }
+    background-color: #fbb500;
+    border-color: #fbb500; }
   .btn-success:focus, .btn-success.focus {
     box-shadow: 0 0 0 0.2rem rgba(3, 168, 124, 0.5); }
   .btn-success.disabled, .btn-success:disabled {
@@ -1798,8 +1798,8 @@ fieldset:disabled a.btn {
   .btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active,
   .show > .btn-success.dropdown-toggle {
     color: #fff;
-    background-color: #027657;
-    border-color: #02694e; }
+    background-color: #0366ff;
+    border-color: #0366ff; }
     .btn-success:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus,
     .show > .btn-success.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(3, 168, 124, 0.5); }
@@ -1856,8 +1856,8 @@ fieldset:disabled a.btn {
   border-color: #0366ff; }
   .btn-danger:hover {
     color: #fff;
-    background-color: #dc1650;
-    border-color: #d1154b; }
+    background-color: #fbb500;
+    border-color: #fbb500; }
   .btn-danger:focus, .btn-danger.focus {
     box-shadow: 0 0 0 0.2rem rgba(234, 47, 101, 0.5); }
   .btn-danger.disabled, .btn-danger:disabled {
@@ -1867,8 +1867,8 @@ fieldset:disabled a.btn {
   .btn-danger:not(:disabled):not(.disabled):active, .btn-danger:not(:disabled):not(.disabled).active,
   .show > .btn-danger.dropdown-toggle {
     color: #fff;
-    background-color: #d1154b;
-    border-color: #c51447; }
+    background-color: #cfb400;
+    border-color: #cfb400; }
     .btn-danger:not(:disabled):not(.disabled):active:focus, .btn-danger:not(:disabled):not(.disabled).active:focus,
     .show > .btn-danger.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(234, 47, 101, 0.5); }
@@ -7155,8 +7155,16 @@ button.bg-lightblue:focus {
 .font-weight-bold {
   font-weight: 700 !important; }
 
-.font-weight-bold-cate {
+.font-weight-bold-side1 {
   color: #0366ff;
+  font-weight: 700 !important; }
+
+.font-weight-bold-side2 {
+  color: #ffde03;
+  font-weight: 700 !important; }
+
+.font-weight-bold-cate {
+  color: #004aad;
   font-weight: 700 !important; }
 
 .font-italic {

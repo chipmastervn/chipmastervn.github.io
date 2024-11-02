@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Welcome to Jekyll!"
+author: chipmaster
 categories: [ Jekyll ]
 # image: assets/images/demo1.jpg
 image: assets/images/logo/logo-home.webp
