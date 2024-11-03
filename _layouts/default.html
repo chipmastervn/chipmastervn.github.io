@@ -65,7 +65,9 @@
 
     <!-- Content -->
     <main role="main" class="site-content">
+        <link href="{{ '/assets/css/prism.css'| prepend: site.baseurl }}" rel="stylesheet">
         {{ content }}
+        <script src="{{ '/assets/js/prism.js' | prepend: site.baseurl }}"></script>
     </main>
 
 
@@ -104,5 +106,4 @@
     {% include tracking-footer.html %}
 
 </body>
-
 </html>

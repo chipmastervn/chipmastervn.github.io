@@ -5,6 +5,7 @@ author: chipmaster
 categories: [ Jekyll ]
 # image: assets/images/demo1.jpg
 image: assets/images/logo/logo-home.webp
+tags: [intro]
 ---
 Xin chào các bạn `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
