@@ -15,13 +15,14 @@ description: "A great Jekyll theme developed by ChipMasterVN @wowthemesnet."
     
 <!-- Begin post excerpts, let's highlight the first 4 posts on top -->
 <div class="row remove-site-content-margin">
-    
+
     <!-- latest post -->
     <!-- {% assign latest_post = site.posts[0] %} -->
     {% for post in site.posts %}
     {% if post.tags contains "intro" %}
     {% assign latest_post = post %}
     <div class="col-md-6">
+        <br><br>
     <div class="card border-0 mb-4 box-shadow">   
     <a href="{{site.baseurl}}{{latest_post.url}}">
     <div class="topfirstimage" style="background-image: url({% if latest_post.image contains "://" %}{{ latest_post.image }}{% else %} {{site.baseurl}}/{{ latest_post.image}}{% endif %}); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>     
@@ -52,9 +53,9 @@ description: "A great Jekyll theme developed by ChipMasterVN @wowthemesnet."
     {% endfor %}
     
     <div class="col-md-6">
-        
+        <br><br>
         <!-- second latest post -->
-        {%- assign second_post = site.posts[1] -%}        
+        {%- assign second_post = site.posts[0] -%}        
         <div class="mb-3 d-flex align-items-center">                
                 {% if second_post.image %}
                 <div class="col-md-4">
@@ -81,7 +82,7 @@ description: "A great Jekyll theme developed by ChipMasterVN @wowthemesnet."
             </div>
         
         <!-- third latest post -->
-        {%- assign third_post = site.posts[2] -%}        
+        {%- assign third_post = site.posts[1] -%}        
         <div class="mb-3 d-flex align-items-center">                
                 {% if third_post.image %}
                 <div class="col-md-4">
@@ -108,7 +109,7 @@ description: "A great Jekyll theme developed by ChipMasterVN @wowthemesnet."
             </div>
         
         <!-- fourth latest post -->
-        {%- assign fourth_post = site.posts[3] -%}        
+        {%- assign fourth_post = site.posts[2] -%}        
         <div class="mb-3 d-flex align-items-center">                
                 {% if fourth_post.image %}
                 <div class="col-md-4">
@@ -175,9 +176,7 @@ description: "A great Jekyll theme developed by ChipMasterVN @wowthemesnet."
         
         <h4 class="font-weight-bold-cate spanborder"><span>Tất cả bài viết</span></h4>
         
-
         {% for post in paginator.posts %}
-        
             {% include main-loop-card.html %}
         
         {% endfor %}

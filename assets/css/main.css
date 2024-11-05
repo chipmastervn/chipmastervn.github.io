@@ -7146,6 +7146,9 @@ button.bg-lightblue:focus {
 .text-capitalize {
   text-transform: capitalize !important; }
 
+.text-category {
+  font-size: 0.8rem; }
+
 .font-weight-light {
   font-weight: 300 !important; }
 

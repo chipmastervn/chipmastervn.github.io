@@ -2,8 +2,9 @@
 layout: post
 title:  "Cấu trúc của Linux Tree"
 author: chipmaster
-categories: [ Embedded Linux ]
+categories: [Embedded Linux]
 image: assets/images/001_post.png
+tags: []
 ---
 
 Bucharest’s history alternated periods of development and decline from the early settlements in antiquity until its consolidation as the national capital of Romania late in the 19th century. First mentioned as the “Citadel of București” in 1459, it became the residence of the famous Wallachian prince Vlad III the Impaler.

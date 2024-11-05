@@ -1,9 +1,9 @@
 <div class="sticky-top sticky-top-offset">
     <br><br><br>
     {% for category in site.categories %}
-    <div class="mb-2 text-capitalize">
+    <div class="mb-2 text-capitalize text-category">
         <a href="{{site.baseurl}}/categories.html#{{ category[0] | downcase }}">
-            {{ category[0]}}
+            {{ category[0] }}
         </a>
     </div>
     {% endfor %}
