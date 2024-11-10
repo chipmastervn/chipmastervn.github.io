@@ -7147,7 +7147,7 @@ button.bg-lightblue:focus {
   text-transform: capitalize !important; }
 
 .text-category {
-  font-size: 0.8rem; }
+  font-size: 1.0rem; }
 
 .font-weight-light {
   font-weight: 300 !important; }
@@ -8476,3 +8476,76 @@ html {
     align-self: baseline !important; }
   .align-self-xl-stretch {
     align-self: stretch !important; } }
+
+@media (min-width: 1367px) {
+    .sidebar-menu {
+      height: 100vh; /* Chiều cao toàn bộ trang */
+      width: 250px;
+      background-color: white;
+      padding-top: 2px;
+      position: fixed; /* Cố định sidebar */
+      top: 300px; /* Căn từ trên */
+      right: 60px; /* Căn từ bên phải */
+    }
+    .sidebar-menu a {
+      padding: 15px 20px;
+      text-decoration: none;
+      font-size: 16px;
+      color: #f54914;
+      display: block;
+    }
+    .sidebar-menu a:hover {
+      /* background-color: #white;
+      color: #343a40; */
+      font-weight: 550;
+      background-color: #575757;
+      color: #f1f1f1;
+    }
+
+    .sidebar-categories {
+      height: 100vh; /* Chiều cao toàn bộ trang */
+      width: 250px;
+      background-color: transparent;
+      padding-top: 2px;
+      position: fixed; /* Cố định sidebar */
+      top: 300px; /* Căn từ trên */
+      left: 65px; /* Căn từ bên phải */
+    }
+}
+
+@media (max-width: 1366px) {
+    .sidebar-menu {
+      display: none;
+    }
+    .sidebar-categories {
+      display: none;
+    }
+}
+
+/* Hiện menu chỉ trên màn hình nhỏ (di động) */
+@media (max-width: 1366px) {
+  .mobile-menu {
+    display: block; /* Hiển thị menu trên điện thoại */
+  }
+}
+
+/* Ẩn menu trên màn hình rộng (máy tính) */
+@media (min-width: 1367px) {
+  .mobile-menu {
+    display: none; /* Ẩn menu trên máy tính */
+  }
+}
+
+/* Hiện menu chỉ trên màn hình nhỏ (di động) */
+@media (max-width: 1366px) {
+  .mobile-categories {
+    display: block; /* Hiển thị menu trên điện thoại */
+  }
+}
+
+/* Ẩn menu trên màn hình rộng (máy tính) */
+@media (min-width: 1367px) {
+  .mobile-categories {
+    display: none; /* Ẩn menu trên máy tính */
+  }
+}
