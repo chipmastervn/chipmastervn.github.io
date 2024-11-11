@@ -7,158 +7,88 @@ image: assets/images/001_post.png
 tags: []
 ---
 
-Để có thể sử dụng một vùng không gian địa chỉ lớn (large address space) khi có nhiều vùng không gian trống (free address space) giữa các khu vực bộ nhớ như heap và stack, các hệ điều hành (OS) có thể sử dụng các kỹ thuật quản lý bộ nhớ (memory management) như: Segmentation, Paging, Swapping, Virtual Memory.
+Ở [bài viết trước](/segmentation-sec1), chúng ta đã cùng nhau tìm hiểu về **Base & Bound Registers**, **Segmentation**, **Segmentation Fault**, **Explicit Approach**, **Implicit Approach**.
 
-Ở bài viết này, chúng ta cùng tìm hiểu về kĩ thuật **Segmentation** trong Operating System.
+Trong bài này, chúng ta sẽ được biết về **Stack** trong Operating System và cùng nhìn lại toàn bộ về kĩ thuật Segmentation.
 
-### Trong bài viết này:
-- [Base & Bounds Registers](#1base--bounds-registers)
-- [Segmentation](#2segmentation)
-- [Segmentation Fault](#3segmentation-fault)
-- [Explicit Approach](#4explicit-approach)
-- [Implicit Approach](#5implicit-approach)
+<div class="sidebar-menu">
+    <h6>Trong bài viết này</h6>
+    <a href="#1stack-trong-operating-system">1. Stack trong Operating System</a>
+    <a href="#2ưu-điểm-của-kĩ-thuật-segmentation">2. Ưu điểm của kĩ thuật Segmentation</a>
+    <a href="#3thách-thức-của-kĩ-thuật-segmentation">3. Thách thức của kĩ thuật Segmentation</a>
+</div>
 
-#### 1.Base & Bound Registers
+<div class="mobile-menu">
+    <h3>Trong bài viết này</h3>
+    <ul><a href="#1stack-trong-operating-system">1. Stack trong Operating System</a></ul>
+    <ul><a href="#2ưu-điểm-của-kĩ-thuật-segmentation">2. Ưu điểm của kĩ thuật Segmentation</a></ul>
+    <ul><a href="#3thách-thức-của-kĩ-thuật-segmentation">3. Thách thức của kĩ thuật Segmentation</a></ul>
+</div>
 
-Trong hệ điều hành (OS), Memory Management Unit (MMU) là một khối quan trọng chịu trách nhiệm quản lý bộ nhớ cho các tiến trình (process). MMU sử dụng hai thanh ghi chính: Base Register và Bound Register để quản lý không gian bộ nhớ của từng tiến trình trong bộ nhớ vật lý (physical memory).
+#### 1.Stack trong Operating System
 
-Chức năng của 2 thanh ghi này như sau:
+Khi Stack được di chuyển đến một địa chỉ vật lý cụ thể trong bộ nhớ, ở đây là `28KB`, Stack sẽ hoạt động theo một cách đặc biệt. Nó không tăng dần từ địa chỉ thấp lên địa chỉ cao như mảng thông thường, mà **giảm dần** từ địa chỉ cao về địa chỉ thấp.
 
-- **Base Register** (Thanh ghi cơ sở): lưu địa chỉ _bắt đầu_ của vùng bộ nhớ được cấp phát cho tiến trình. Tất cả địa chỉ mà tiến trình truy cập sẽ được cộng thêm với địa chỉ cơ sở này. Khi tiến trình truy cập một địa chỉ, địa chỉ này sẽ được cộng với giá trị trong Base Register, giúp chuyển đổi địa chỉ ảo sang địa chỉ vật lý một cách nhanh chóng.
+Stack bắt đầu ở địa chỉ `28KB` và có thể mở rộng (lớn dần lên) về phía dưới đến địa chỉ `26KB` trong bộ nhớ vật lý. Phần này tương ứng với địa chỉ ảo từ `16KB` đến `14KB`. Điều này có nghĩa là Stack chiếm một vùng nhớ từ `28KB` đến `26KB` trong địa chỉ vật lý, nhưng ở mức địa chỉ ảo, nó là từ `16KB` đến `14KB`.
 
-- **Bound Register** (Thanh ghi giới hạn): lưu _kích thước_ của vùng bộ nhớ cấp phát cho tiến trình. Khi truy cập một địa chỉ, OS sẽ kiểm tra địa chỉ này để đảm bảo chương trình chỉ truy cập dữ liệu trong phạm vi giới hạn được cấp phát, xác định bởi Bound Register. Nếu vượt quá, OS sẽ báo lỗi **_Segmentation Fault_**.
+Do Stack có hướng phát triển ngược (hướng về phía địa chỉ thấp hơn), quá trình chuyển đổi từ địa chỉ ảo sang địa chỉ vật lý cần phải có cách tiếp cận khác để phù hợp với điều này.
 
-Khi sử dụng cặp thanh ghi này, MMU chỉ cần 2 thao tác cơ bản là **thêm** và **so sánh**. 
-- Thêm: Thêm địa chỉ ảo với Base Register để có được địa chỉ vật lý.
-- So sánh: Kiểm tra để đảm bảo địa chỉ này không vượt quá giới hạn của Bound Register.
+Ngoài việc biết địa chỉ cơ sở (nơi Stack bắt đầu) và kích thước tối đa của Stack, **phần cứng** cũng cần biết hướng mà Stack phát triển. Ví dụ: phần cứng có thể sử dụng một "**bit**" để chỉ ra hướng phát triển: nếu bit là 1 thì Stack phát triển về hướng tăng địa chỉ (như mảng thông thường), còn nếu bit là 0 thì Stack phát triển về hướng giảm địa chỉ.
+Hãy xem bảng dưới đây:
 
-Hai thao tác này có thể thực hiện song song, giúp quá trình rất nhanh và tiết kiệm tài nguyên, vì chỉ cần dùng hai thanh ghi.
+| **Segment** | **Địa chỉ bắt đầu** | **Kích thước (Max 4K)** | **Tăng địa chỉ** |
+|:-----------:|:-------------------:|:--------------:|:----------------:|
+|     Code    |         32K         |       2K       |         1        |
+|     Heap    |         34K         |       3K       |         1        |
+|    Stack    |         28K         |       2K       |         0        |
 
-> Công thức tính địa chỉ vật lý: `Physical address = Virtual address + Base Register`.
+Vì Stack phát triển ngược, việc dịch địa chỉ ảo sang địa chỉ vật lý cũng cần thay đổi. Thay vì sử dụng quy tắc dịch cho các đoạn (segment) phát triển theo chiều tăng, phần cứng cần dịch địa chỉ cho Stack theo chiều ngược.
 
-> Địa chỉ này phải nằm trong khoảng từ `(Base Register, Base + Bound Register)`.
+Giả sử bạn muốn truy cập vào một địa chỉ ảo cụ thể, là `15KB`. Theo ví dụ, địa chỉ ảo này sẽ tương ứng với `27KB` trong bộ nhớ vật lý. Để xử lý địa chỉ này, địa chỉ ảo (`15KB`) sẽ được chuyển thành dạng nhị phân. Điều này giúp phần cứng dễ dàng thực hiện các phép toán cần thiết để dịch địa chỉ chính xác.
 
-Tuy nhiên, khi cần cấp phát một vùng bộ nhớ lớn cho một tiến trình, việc chỉ sử dụng Base và Bound Register sẽ không hiệu quả vì có thể không tìm được vùng bộ nhớ liền kề đủ lớn trong bộ nhớ vật lý. Kỹ thuật **Segmentation** được phát triển để giải quyết vấn đề này. Với Segmentation, không gian bộ nhớ của tiến trình được chia thành các đoạn (segment) riêng biệt, giúp tận dụng bộ nhớ hiệu quả hơn và giảm thiểu vấn đề phân mảnh bộ nhớ.
+**15KB = 15 * 1024 = 15360 (decimal) = 11 1100 0000 0000 (binary) = 0x3C00 (hex)**
 
-#### 2.Segmentation
+Hai bit đầu tiên của địa chỉ ảo là `11`. Phần cứng sử dụng hai bit này để xác định đoạn bộ nhớ cần truy cập (ở đây là Stack).
+Sau khi xác định đoạn, ta còn lại phần offset là `3KB`, là khoảng cách từ đầu đoạn đến địa chỉ cụ thể cần truy cập.
+Do Stack phát triển ngược (hướng về địa chỉ thấp hơn), offset này cần được xử lý như một **offset âm**.
 
-Segmentation (phân đoạn) là một kỹ thuật được phát triển để giải quyết vấn đề phân mảnh bộ nhớ. Phân mảnh bộ nhớ xảy ra khi một tiến trình được cấp phát một vùng nhớ lớn hơn mức cần thiết, dẫn đến lãng phí tài nguyên.
+Để tính offset âm, ta lấy kích thước tối đa của đoạn (trong trường hợp này là `4KB`) và trừ đi offset hiện tại (`3KB`):
+**3KB − 4KB = −1KB**
 
-Với kỹ thuật Segmentation, bộ nhớ được chia thành nhiều segment (đoạn) có kích thước khác nhau, và mỗi segment là một dải địa chỉ liên tục trong không gian địa chỉ của process. Mỗi segment này có một cặp Base Register (thanh ghi cơ sở) và Bound Register (thanh ghi giới hạn) riêng biệt, thay vì sử dụng một cặp cho toàn bộ bộ nhớ. Điều này giúp OS quản lý bộ nhớ linh hoạt hơn.
+Sau đó, để tìm địa chỉ vật lý chính xác, ta sẽ lấy địa chỉ cơ sở (base) của đoạn Stack trong bộ nhớ vật lý, ở đây là `28KB`, và cộng với offset âm `-1KB`: **28KB + (−1KB) = 27KB**
 
-Trong không gian địa chỉ của một tiến trình thường có 3 loại segment chính:
-- Code Segment: Chứa mã lệnh của chương trình.
-- Heap Segment: Chứa dữ liệu mà chương trình cấp phát động trong quá trình chạy.
-- Stack Segment: Chứa dữ liệu tạm thời và thông tin gọi hàm.
+Cuối cùng, để đảm bảo địa chỉ truy cập nằm trong giới hạn cho phép, phần cứng thực hiện kiểm tra độ dài của offset âm bằng cách xem giá trị tuyệt đối của offset âm (`-1KB`) có nhỏ hơn hoặc bằng kích thước hiện tại của đoạn không. Ở đây, kích thước hiện tại của đoạn là `2KB`, và giá trị tuyệt đối của `-1KB` là `1KB`, nhỏ hơn `2KB`. Vì vậy, địa chỉ này là hợp lệ và phần cứng cho phép truy cập.
 
-Kỹ thuật Segmentation cho phép OS đặt từng segment của một chương trình vào các vị trí khác nhau trong bộ nhớ vật lý, giúp sử dụng bộ nhớ hiệu quả hơn và tránh lãng phí khi bộ nhớ vật lý bị lấp đầy bởi các khoảng địa chỉ ảo không sử dụng.
+#### 2.Ưu điểm của kĩ thuật Segmentation
 
-Giả sử chúng ta muốn đưa không gian địa chỉ của một chương trình vào bộ nhớ vật lý. Khi mỗi đoạn có một cặp Base Register (thanh ghi cơ sở) và Bound Register (thanh ghi giới hạn) riêng, OS có thể đưa từng đoạn vào các vị trí độc lập trong bộ nhớ vật lý. Ví dụ trong hình minh họa, một bộ nhớ vật lý 64KB chứa ba đoạn:
+Khi hệ thống sử dụng segmentation, chỉ những phần của không gian địa chỉ (address space) đang thực sự được sử dụng mới được chuyển vào bộ nhớ vật lý. Điều này giúp tiết kiệm không gian so với việc cấp phát một khối bộ nhớ lớn cố định cho cả không gian địa chỉ của tiến trình.
+Đặc biệt, khoảng trống giữa Stack và vùng Heap không cần phải cấp phát trong bộ nhớ vật lý, vì vậy hệ điều hành có thể hỗ trợ không gian địa chỉ ảo lớn hơn mà không lãng phí bộ nhớ vật lý.
 
-- Code segment được đặt tại địa chỉ `32KB` trong bộ nhớ vật lý, với kích thước `2KB`.
-- Heap segment được đặt tại địa chỉ `34KB`, với kích thước `3KB`.
-- Stack segment được đặt tại địa chỉ `28KB`, với kích thước `2KB`.
+Nhờ vào việc không phải lưu trữ mọi phần của không gian địa chỉ trong bộ nhớ vật lý, segmentation cho phép hệ điều hành hỗ trợ **không gian địa chỉ ảo lớn hơn** cho mỗi tiến trình. Điều này rất quan trọng cho các ứng dụng cần nhiều bộ nhớ mà không làm quá tải bộ nhớ vật lý.
 
-Kỹ thuật này cho phép OS sử dụng không gian địa chỉ lớn, bao gồm cả các vùng địa chỉ ảo thưa thớt (sparse address space), vì chỉ những vùng bộ nhớ đang dùng mới được cấp phát trong bộ nhớ vật lý.
+Do tính toán các phân đoạn đơn giản và thân thiện với phần cứng, segmentation có thể thực hiện nhanh chóng. Phần cứng chỉ cần các phép tính đơn giản để chuyển đổi địa chỉ, nên không tốn nhiều tài nguyên.
 
-Để hỗ trợ Segmentation, phần cứng của MMU cần một bộ ba cặp thanh ghi (base và bounds) để quản lý ba segment chính.
+#### 3.Thách thức của kĩ thuật Segmentation
 
-#### 3.Segmentation Fault
+Mặc dù segmentation mang lại lợi ích, nó cũng đặt ra những thách thức mới cho hệ điều hành.
 
-Segmentation Fault (lỗi phân đoạn) là một lỗi xảy ra khi một chương trình cố gắng truy cập vào một vùng bộ nhớ không được phép hoặc không hợp lệ. Lỗi này thường xuất hiện khi:
+**Context Switch**
 
-- Truy cập bộ nhớ không hợp lệ: Chương trình cố gắng truy cập một địa chỉ bộ nhớ ngoài phạm vi được cấp phát, chẳng hạn như vượt quá giới hạn của một mảng hoặc truy cập vào một con trỏ rỗng (null pointer).
+Khi hệ điều hành chuyển từ một tiến trình (process) này sang một tiến trình khác, nó phải lưu và khôi phục các thanh ghi segment (segment registers) của mỗi tiến trình. Những thanh ghi này chứa thông tin về các đoạn bộ nhớ của tiến trình và rất quan trọng để xác định không gian địa chỉ ảo của nó.
+Hệ điều hành phải đảm bảo rằng không gian địa chỉ ảo của mỗi tiến trình được thiết lập chính xác trước khi tiến trình tiếp tục chạy.
 
-- Truy cập vào vùng bộ nhớ chỉ đọc: Khi chương trình cố gắng ghi dữ liệu vào vùng bộ nhớ chỉ có quyền đọc, chẳng hạn như vùng chứa hằng số (như các chuỗi ký tự cố định).
+**Quản lý sự thay đổi kích thước của các đoạn**
 
-- Sử dụng con trỏ chưa khởi tạo: Con trỏ chưa được khởi tạo có thể trỏ đến một địa chỉ ngẫu nhiên trong bộ nhớ, dẫn đến việc truy cập vào vùng không hợp lệ.
+Trong quá trình hoạt động, các đoạn bộ nhớ như Stack hoặc Heap có thể mở rộng hoặc thu nhỏ tùy theo nhu cầu.
+Ví dụ, khi chương trình cần cấp phát thêm bộ nhớ động (dùng hàm `malloc()`), nếu Heap hiện tại có đủ chỗ, `malloc()` sẽ cấp phát từ vùng trống trong Heap. Nhưng nếu không đủ, hệ điều hành cần mở rộng đoạn Heap.
 
-- Giải phóng bộ nhớ không hợp lệ: Khi một chương trình cố gắng giải phóng một vùng bộ nhớ mà nó chưa từng cấp phát hoặc đã giải phóng trước đó, điều này cũng có thể gây ra lỗi phân đoạn.
+Khi đó, thư viện quản lý bộ nhớ (như `malloc()`) sẽ gọi **system call** (ví dụ, `sbrk()`) để yêu cầu mở rộng Heap. Hệ điều hành sẽ cấp thêm không gian bộ nhớ vật lý nếu có, cập nhật thanh ghi kích thước của segment và báo cho thư viện biết yêu cầu đã thành công. Nếu không có đủ bộ nhớ vật lý, hoặc tiến trình đã sử dụng quá nhiều, hệ điều hành có thể từ chối yêu cầu.
 
-Để hiểu rõ hơn, hãy cùng xem một ví dụ về cách hệ điều hành chuyển đổi địa chỉ ảo (virtual address) sang địa chỉ vật lý (physical address) bằng kỹ thuật Segmentation.
+**Quản lý vùng nhớ vật lý trống**
 
-**Ví dụ 1**: Truy cập hợp lệ vào Code Segment
+Đây là một trong những thách thức quan trọng nhất. Khi mỗi tiến trình có nhiều đoạn với kích thước khác nhau, hệ điều hành phải quản lý chặt chẽ bộ nhớ vật lý để đảm bảo có đủ không gian cho các không gian địa chỉ mới.
 
-Giả sử chương trình có một địa chỉ ảo là `100` trong **Code Segment**. Khi chương trình yêu cầu truy cập địa chỉ này, phần cứng sẽ thêm giá trị base của Code Segment vào địa chỉ ảo 100 để tìm địa chỉ vật lý tương ứng:
-- Base của Code Segment = `32KB` (32*1024).
-- Địa chỉ vật lý = `100` + `32KB` = `32868` (100 + 32*1024).
+Khi có nhiều đoạn được cấp phát và giải phóng, bộ nhớ trống sẽ bị chia nhỏ thành các mảnh có kích thước lẻ, không đều nhau. Điều này làm cho việc cấp phát bộ nhớ mới trở nên khó khăn, vì các đoạn mới có thể không phù hợp với kích thước của những mảnh trống này.
 
-Sau đó, phần cứng sẽ kiểm tra xem địa chỉ này có nằm trong giới hạn kích thước của Code Segment không (giới hạn là `2KB`). Vì `100 < 2KB`, địa chỉ hợp lệ, và phần cứng sẽ truy cập bộ nhớ vật lý tại địa chỉ `32868`.
-
-**Ví dụ 2**: Truy cập hợp lệ vào Heap Segment
-
-Giả sử chương trình muốn truy cập vào địa chỉ ảo `4200` trong **Heap Segment**. Đầu tiên, chúng ta phải chuyển đổi địa chỉ ảo này thành offset trong Heap Segment:
-
-- Địa chỉ bắt đầu của Heap Segment trong không gian địa chỉ ảo là `4KB` (4096). Do đó, offset sẽ là `4200 - 4096 = 104`.
-
-Sau đó, phần cứng sẽ thêm Base của Heap Segment trong bộ nhớ vật lý (ở đây là `34KB`) vào offset:
-- Địa chỉ vật lý = `34KB + 104 = 34920`.
-
-**Ví dụ 3**: Truy cập không hợp lệ (Segmentation Fault)
-
-Nếu chương trình cố gắng truy cập một địa chỉ vượt quá phạm vi hợp lệ của Heap Segment, chẳng hạn như `7KB` trong không gian địa chỉ ảo, phần cứng sẽ phát hiện rằng địa chỉ này vượt quá giới hạn của Heap Segment và từ chối truy cập. Lúc này, hệ điều hành sẽ phát sinh lỗi **Segmentation Fault** và thường sẽ chấm dứt tiến trình vì vi phạm truy cập bộ nhớ.
-
-#### 4.Explicit Approach
-
-Trong quá trình chuyển đổi từ địa chỉ ảo sang địa chỉ vật lý, phần cứng sử dụng các *segment registers* (thanh ghi phân đoạn). Vậy làm thế nào để phần cứng xác định được offset trong một đoạn và biết địa chỉ đó thuộc về đoạn nào?
-Một cách làm phổ biến được gọi là *explicit approach* (phương pháp tường minh).
-- Ở phương pháp này, không gian địa chỉ được chia thành các đoạn dựa trên một số bit đầu tiên của địa chỉ ảo.
-- Những bit này giúp xác định đoạn mà địa chỉ thuộc về, ví dụ như Code Segment, Heap Segment, hay Stack Segment.
-- Sau khi xác định được đoạn, các bit còn lại trong địa chỉ sẽ cho biết vị trí chi tiết (offset) của địa chỉ trong đoạn đó.
-
-Nói đơn giản, các bit đầu tiên của địa chỉ ảo cho biết địa chỉ thuộc đoạn nào, còn các bit còn lại cho biết vị trí cụ thể bên trong đoạn đó.
-
-Trong ví dụ này, không gian địa chỉ ảo của chúng ta được chia thành ba segments. Để phân biệt các đoạn, chúng ta chỉ cần dùng 2 bit đầu tiên của địa chỉ ảo. 
-Giả sử địa chỉ ảo có **14 bit**. **2 bit đầu tiên** của địa chỉ này xác định đoạn mà địa chỉ thuộc về, và **12 bit còn lại** chỉ ra **offset** trong đoạn đó.
-- Nếu 2 bit đầu tiên là 00, phần cứng hiểu rằng địa chỉ này thuộc Code Segment. Nó sẽ sử dụng cặp thanh ghi base và bounds của Code Segment để xác định địa chỉ vật lý tương ứng.
-- Nếu 2 bit đầu tiên là 01, địa chỉ thuộc Heap Segment và phần cứng sẽ dùng cặp thanh ghi base và bounds của Heap Segment.
-
-Các giá trị khác của 2 bit đầu tiên có thể được dùng cho các đoạn khác (như Stack Segment) hoặc để mở rộng thêm các phân đoạn trong hệ thống.
-
-Bằng cách này, hệ thống có thể nhanh chóng xác định đoạn mà địa chỉ thuộc về và sử dụng thanh ghi tương ứng để tính địa chỉ vật lý trong bộ nhớ.
-
-Để hiểu rõ hơn, hãy cùng dịch địa chỉ ảo `4200` trong **Heap Segment** sang dạng nhị phân và xem cách phần cứng xử lý địa chỉ này.
-
-Địa chỉ ảo `4200` trong hệ nhị phân trông như sau:
-- 2 bit đầu tiên: **01** - cho biết địa chỉ này thuộc Heap Segment.
-- 12 bit cuối: `000001101000` (hex: `0x068`, decimal: `104`) - đây là offset trong Heap Segment, tức là vị trí chi tiết trong đoạn này. (Giá trị 104 được giải thích ở ví dụ trước)
-
-Xác định địa chỉ vật lý
-- 2 bit đầu tiên **01** cho phép phần cứng biết địa chỉ thuộc Heap Segment. Phần cứng sẽ chọn thanh ghi base của Heap Segment để thực hiện tính toán.
-- 12 bit còn lại là offset (**104**) trong đoạn, sẽ được thêm vào giá trị của base register của Heap Segment để tính địa chỉ vật lý cuối cùng.
-
-Địa chỉ vật lý = Base của Heap Segment + Offset (104).
-
-Offset này cũng giúp phần cứng kiểm tra bounds (giới hạn) của đoạn. Nếu offset không nhỏ hơn bounds (kích thước tối đa của đoạn), địa chỉ này là không hợp lệ và sẽ gây ra lỗi (như lỗi segmentation fault).
-
-Minh họa bằng code C như sau:
-
-```C
-#define SEG_MASK 0x300
-#define SEG_SHIFT 12
-#define OFFSET_MASK 0xFFF
-
-// get top 2 bits of 14-bit VA
-Segment = (VirtualAddress & SEG_MASK) >> SEG_SHIFT
-// now get offset
-Offset  = VirtualAddress & OFFSET_MASK
-if (Offset >= Bounds[Segment])
-    RaiseException(PROTECTION_FAULT)
-else
-    PhysAddr = Base[Segment] + Offset
-    Register = AccessMemory(PhysAddr)
-```
-
-#### 5.Implicit Approach
-
-Trong hệ thống phân đoạn, khi ta sử dụng 2 bit đầu của địa chỉ để xác định đoạn (segment) mà địa chỉ thuộc về, nhưng chỉ có 3 đoạn chính (code, heap và stack), một phần của không gian địa chỉ sẽ bị bỏ trống. Một số hệ thống khắc phục điều này bằng cách gộp code vào cùng một đoạn với heap để tận dụng tối đa không gian địa chỉ ảo và chỉ cần sử dụng 1 bit để chọn đoạn.
-
-Khi sử dụng nhiều bit để chọn đoạn, có một số hạn chế:
-- Giới hạn kích thước đoạn: Sử dụng 2 bit để chọn đoạn sẽ chia không gian địa chỉ thành 4 phần. Với một địa chỉ ảo `16KB`, không gian này sẽ được chia thành 4 đoạn, mỗi đoạn tối đa `4KB`. Điều này có nghĩa là mỗi đoạn (code, heap, stack) không thể vượt quá `4KB`.
-- Khó mở rộng: Nếu chương trình muốn mở rộng một đoạn, ví dụ như heap hay stack, vượt quá giới hạn `4KB`, thì không thể làm được vì không gian địa chỉ đã bị chia sẵn và không thể tăng thêm.
-
-Có một phương pháp khác giúp xác định đoạn mà không cần dùng bit riêng để chỉ định, giúp tận dụng tốt hơn không gian địa chỉ, gọi là **implicit approach**.
-Thay vì dùng các bit để chọn đoạn, hệ thống có thể tự động xác định đoạn dựa trên nguồn gốc của địa chỉ (implicit approach):
-- Nếu địa chỉ được lấy từ program counter (đếm lệnh), địa chỉ này thuộc Code Segment (vì program counter chứa địa chỉ lệnh tiếp theo cần thực thi).
-- Nếu địa chỉ đến từ stack pointer hoặc base pointer, địa chỉ này thuộc Stack Segment.
-- Các địa chỉ khác được coi là thuộc Heap Segment.
+> **Segmentation** không hoàn toàn phù hợp với mô hình không gian địa chỉ thưa thớt hiện đại, nơi mà nhiều phần lớn của không gian địa chỉ có thể chỉ chứa một số ít dữ liệu. 
+Để quản lý tốt hơn các không gian địa chỉ thưa thớt và linh hoạt hơn trong quản lý bộ nhớ, hệ điều hành cần những giải pháp mới, chẳng hạn như **Paging** (phân trang).

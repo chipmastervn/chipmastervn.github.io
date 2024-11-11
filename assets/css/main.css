@@ -190,6 +190,8 @@ svg {
   vertical-align: middle; }
 
 table {
+  width: 100%;
+  border: 1px solid black;
   border-collapse: collapse; }
 
 caption {
@@ -8477,11 +8479,11 @@ html {
   .align-self-xl-stretch {
     align-self: stretch !important; } }
 
-@media (min-width: 1367px) {
+@media (min-width: 1369px) {
     .sidebar-menu {
       height: 100vh; /* Chiều cao toàn bộ trang */
       width: 250px;
-      background-color: white;
+      background-color: transparent;
       padding-top: 2px;
       position: fixed; /* Cố định sidebar */
       top: 300px; /* Căn từ trên */
@@ -8513,7 +8515,7 @@ html {
     }
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1368px) {
     .sidebar-menu {
       display: none;
     }
@@ -8523,28 +8525,28 @@ html {
 }
 
 /* Hiện menu chỉ trên màn hình nhỏ (di động) */
-@media (max-width: 1366px) {
+@media (max-width: 1368px) {
   .mobile-menu {
     display: block; /* Hiển thị menu trên điện thoại */
   }
 }
 
 /* Ẩn menu trên màn hình rộng (máy tính) */
-@media (min-width: 1367px) {
+@media (min-width: 1369px) {
   .mobile-menu {
     display: none; /* Ẩn menu trên máy tính */
   }
 }
 
 /* Hiện menu chỉ trên màn hình nhỏ (di động) */
-@media (max-width: 1366px) {
+@media (max-width: 1368px) {
   .mobile-categories {
     display: block; /* Hiển thị menu trên điện thoại */
   }
 }
 
 /* Ẩn menu trên màn hình rộng (máy tính) */
-@media (min-width: 1367px) {
+@media (min-width: 1369px) {
   .mobile-categories {
     display: none; /* Ẩn menu trên máy tính */
   }
