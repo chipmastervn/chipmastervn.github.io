@@ -6,6 +6,13 @@ pagination:
 description: "A great Jekyll theme developed by ChipMasterVN @wowthemesnet."
 ---
 
+<!-- Slick CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<!-- jQuery (yêu cầu cho slick) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Slick JS -->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <div class="container">
     
@@ -140,6 +147,7 @@ description: "A great Jekyll theme developed by ChipMasterVN @wowthemesnet."
 </div>
     
 <!-- Sticky - add sticky tag to the post you want to highlight here - tags: [sticky] -->
+<div class="highlight-slider">
 {% for post in site.posts %} 
 {% if post.tags contains "highlight" %}
 <div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
@@ -159,7 +167,7 @@ description: "A great Jekyll theme developed by ChipMasterVN @wowthemesnet."
 </div> 
 {% endif %}
 {% endfor %}
-
+</div>
 
     
 

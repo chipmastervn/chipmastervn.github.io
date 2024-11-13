@@ -134,3 +134,14 @@ $(function() {
     }
   }
 });
+
+// highlight-slider
+$(".highlight-slider").slick({
+    dots: true,
+    infinite: true,
+    speed: 1500,
+    slidesToShow: 1,
+    arrows: false,
+    adaptiveHeight: true,
+    autoplay: true,
+});
