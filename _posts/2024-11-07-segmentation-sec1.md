@@ -7,9 +7,11 @@ image: assets/images/001_post.png
 tags: []
 ---
 
-Để có thể sử dụng một vùng không gian địa chỉ lớn (large address space) khi có nhiều vùng không gian trống (free address space) giữa các khu vực bộ nhớ như heap và stack, các hệ điều hành (OS) có thể sử dụng các kỹ thuật quản lý bộ nhớ (memory management) như: Segmentation, Paging, Swapping, Virtual Memory.
+Để có thể quản lý bộ nhớ (memory management) một cách hiệu quả, các hệ điều hành (OS) có thể sử dụng một số kỹ thuật như: Segmentation, Paging, Swapping, Virtual Memory.
 
 Ở bài viết này, chúng ta cùng tìm hiểu về kĩ thuật **Segmentation** trong Operating System.
+
+Với Segmentation, không gian bộ nhớ mà hệ điều hành quản lý được chia thành các phần có kích thước thay đổi, gọi là các đoạn (segments). Mỗi segment có thể phục vụ cho các phần cụ thể của chương trình như Code, Stack, hoặc Heap.
 
 <div class="sidebar-menu">
     <h6>Trong bài viết này</h6>
@@ -53,7 +55,7 @@ Tuy nhiên, khi cần cấp phát một vùng bộ nhớ lớn cho một tiến 
 
 #### 2.Segmentation
 
-Segmentation (phân đoạn) là một kỹ thuật được phát triển để giải quyết vấn đề phân mảnh bộ nhớ. Phân mảnh bộ nhớ xảy ra khi một tiến trình được cấp phát một vùng nhớ lớn hơn mức cần thiết, dẫn đến lãng phí tài nguyên.
+Segmentation (phân đoạn) cung cấp một cách tổ chức bộ nhớ cho các chương trình sao cho phù hợp với cấu trúc logic và nhu cầu của chúng, thay vì một kích thước cố định.
 
 Với kỹ thuật Segmentation, bộ nhớ được chia thành nhiều segment (đoạn) có kích thước khác nhau, và mỗi segment là một dải địa chỉ liên tục trong không gian địa chỉ của process. Mỗi segment này có một cặp Base Register (thanh ghi cơ sở) và Bound Register (thanh ghi giới hạn) riêng biệt, thay vì sử dụng một cặp cho toàn bộ bộ nhớ. Điều này giúp OS quản lý bộ nhớ linh hoạt hơn.
 
@@ -73,6 +75,8 @@ Giả sử chúng ta muốn đưa không gian địa chỉ của một chương 
 Kỹ thuật này cho phép OS sử dụng không gian địa chỉ lớn, bao gồm cả các vùng địa chỉ ảo thưa thớt (sparse address space), vì chỉ những vùng bộ nhớ đang dùng mới được cấp phát trong bộ nhớ vật lý.
 
 Để hỗ trợ Segmentation, phần cứng của MMU cần một bộ ba cặp thanh ghi (base và bounds) để quản lý ba segment chính.
+
+Segmentation giúp giảm thiểu hiện tượng phân mảnh trong (internal fragmentation) vì kích thước của các segments được tùy chỉnh dựa trên nhu cầu. Tuy nhiên, nó lại làm tăng nguy cơ phân mảnh ngoài (external fragmentation).
 
 #### 3.Segmentation Fault
 

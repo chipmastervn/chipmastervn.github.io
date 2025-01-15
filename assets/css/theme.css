@@ -203,6 +203,7 @@ a.text-dark:hover {
 	color:#fff !important;
 }
 .navbar-brand {
+	color:#f54914;
 	margin-right:2rem;
 	font-size:1.55rem;
     font-family:"Segoe UI", "Helvetica Neue", Arial;

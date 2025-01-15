@@ -9,7 +9,7 @@ tags: []
 
 Ở [bài viết trước](/segmentation-sec1), chúng ta đã cùng nhau tìm hiểu về **Base & Bound Registers**, **Segmentation**, **Segmentation Fault**, **Explicit Approach**, **Implicit Approach**.
 
-Trong bài này, chúng ta sẽ được biết về **Stack** trong Operating System và cùng nhìn lại toàn bộ về kĩ thuật Segmentation.
+Trong bài này, chúng ta sẽ được biết về **Stack** trong Operating System và cùng nhìn lại kĩ thuật Segmentation.
 
 <div class="sidebar-menu">
     <h6>Trong bài viết này</h6>
@@ -91,4 +91,4 @@ Khi đó, thư viện quản lý bộ nhớ (như `malloc()`) sẽ gọi **syste
 Khi có nhiều đoạn được cấp phát và giải phóng, bộ nhớ trống sẽ bị chia nhỏ thành các mảnh có kích thước lẻ, không đều nhau. Điều này làm cho việc cấp phát bộ nhớ mới trở nên khó khăn, vì các đoạn mới có thể không phù hợp với kích thước của những mảnh trống này.
 
 > **Segmentation** không hoàn toàn phù hợp với mô hình không gian địa chỉ thưa thớt hiện đại, nơi mà nhiều phần lớn của không gian địa chỉ có thể chỉ chứa một số ít dữ liệu. 
-Để quản lý tốt hơn các không gian địa chỉ thưa thớt và linh hoạt hơn trong quản lý bộ nhớ, hệ điều hành cần những giải pháp mới, chẳng hạn như **Paging** (phân trang).
+Để quản lý tốt hơn các không gian địa chỉ thưa thớt và linh hoạt hơn trong quản lý bộ nhớ, hệ điều hành cần những giải pháp mới, chẳng hạn như [**Paging**](/paging) (phân trang).

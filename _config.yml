@@ -1,6 +1,6 @@
 # Site
 name: 'chipmastervn'
-description: 'Xin chào, Chúng tôi là ChipMasterVN. Tại đây, chúng tôi viết về chủ đề kĩ thuật và công nghệ. Hy vọng bạn thích nó!'
+description: 'Truyền cảm hứng, dẫn dắt tương lai: Kiến tạo tri thức về kĩ thuật và công nghệ!'
 logo: assets/images/logo/logo-home.webp
 favicon: 'assets/images/favicon.png'
 baseurl: ""
@@ -23,7 +23,7 @@ authors:
       name:           chipmastervn
       site:           https://www.facebook.com/chipmastervn
       avatar:         assets/images/avatar1.webp
-      bio:            "Xin chào, Chúng tôi là ChipMasterVN. Tại đây, chúng tôi viết về chủ đề kĩ thuật và công nghệ. Hy vọng bạn thích nó!"
+      bio:            "Truyền cảm hứng, dẫn dắt tương lai: Kiến tạo tri thức về kĩ thuật và công nghệ!"
       email:          wowthemesnet@gmail.com
       instagram:        https://www.instagram.com/chipmastervn/
  
