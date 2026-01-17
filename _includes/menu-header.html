@@ -1,20 +1,20 @@
 <!--  Replace menu links here -->
 
-<li class="nav-item">
-<a class="nav-link" href="{{site.baseurl}}/">Home</a>
+<li class="nav-item {% if page.url == '/' %}active{% endif %}">
+<a class="nav-link" href="{{site.baseurl}}/" aria-label="Trang chủ">Home{% if page.url == '/' %} <span class="sr-only">(current)</span>{% endif %}</a>
 </li>
-<li class="nav-item">
-<a class="nav-link" href="{{site.baseurl}}/about-me.html">Giới thiệu</a>
+<li class="nav-item {% if page.url contains 'about' %}active{% endif %}">
+<a class="nav-link" href="{{site.baseurl}}/about-me.html" aria-label="Giới thiệu">Giới thiệu</a>
 </li>
-<li class="nav-item">
-<a class="nav-link" href="{{site.baseurl}}/tags.html">Ebooks</a>
+<li class="nav-item {% if page.url contains 'tags' %}active{% endif %}">
+<a class="nav-link" href="{{site.baseurl}}/tags.html" aria-label="Ebooks và tài liệu">Ebooks</a>
 </li>
-<li class="nav-item">
-<a class="nav-link" href="{{site.baseurl}}/categories.html">Blogs</a>
+<li class="nav-item {% if page.url contains 'categories' or page.layout == 'post' %}active{% endif %}">
+<a class="nav-link" href="{{site.baseurl}}/categories.html" aria-label="Blogs và bài viết">Blogs</a>
 </li>
 <!-- <li class="nav-item">
-<a target="_blank" class="nav-link" href="https://www.patreon.com/c/chipmastervn">Audiobooks</a>
+<a target="_blank" class="nav-link" href="https://www.patreon.com/c/chipmastervn" aria-label="Audiobooks">Audiobooks</a>
 </li> -->
 <li class="nav-item">
-<a target="_blank" class="nav-link" href="https://ko-fi.com/chipmastervn">Buy me a coffee <i class="fa fa-coffee text-danger"></i></a>
+<a target="_blank" class="nav-link" href="https://buymeacoffee.com/chipmastervn" aria-label="Mua cho tôi một ly cà phê">Buy me a coffee <i class="fa fa-coffee text-danger" aria-hidden="true"></i></a>
 </li>

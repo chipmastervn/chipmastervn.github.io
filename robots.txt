@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /assets/
+Disallow: /_site/
+
+Sitemap: https://www.chipmastervn.com/sitemap.xml

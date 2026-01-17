@@ -6,6 +6,19 @@ $(function() {
         $('#lunrsearchresults').hide( 1000 );
         $( "body" ).removeClass( "modal-open" );
     });
+    
+    // ESC key to close modal
+    $(document).on('keydown', function(e) {
+        if (e.key === 'Escape' && $('#lunrsearchresults').is(':visible')) {
+            $('#lunrsearchresults').hide( 1000 );
+            $( "body" ).removeClass( "modal-open" );
+        }
+    });
+    
+    // Focus trap in modal
+    $('#lunrsearchresults').on('shown.bs.modal', function () {
+        $(this).find('#btnx').focus();
+    });
 });
     
 {% assign counter = 0 %}
@@ -76,6 +89,6 @@ function lunr_search(term) {
 
 
 
-<form class="bd-search hidden-sm-down" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);">
+<form class="bd-search hidden-sm-down" onSubmit="return lunr_search(document.getElementById('lunrsearch').value);" role="search" aria-label="Search form">
 <input type="text" class="form-control text-small"  id="lunrsearch" name="q" value="" placeholder="Tìm kiếm..."> 
 </form>

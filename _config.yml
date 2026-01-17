@@ -4,9 +4,25 @@ description: 'Truyền cảm hứng, dẫn dắt tương lai: Kiến tạo tri t
 logo: assets/images/logo/logo-home.webp
 favicon: 'assets/images/favicon.png'
 baseurl: ""
+url: "https://www.chipmastervn.com"
 disqus: 'demowebsite'
 email: 'chipmastervn@gmail.com'
 mailchimp-list: 'https://formspree.io/f/xqakpgyn'
+
+# SEO Settings
+title: 'ChipMasterVN - Embedded Systems & RTOS Blog'
+tagline: 'Kiến tạo tri thức về kĩ thuật và công nghệ'
+author: 'ChipMasterVN'
+twitter:
+  username: chipmastervn
+  card: summary_large_image
+social:
+  name: ChipMasterVN
+  links:
+    - https://www.facebook.com/chipmastervn
+    - https://www.instagram.com/chipmastervn/
+defaults_image: assets/images/logo/logo-home.webp
+keywords: 'embedded systems, rtos, iot, lập trình nhúng, arduino, esp32, stm32, firmware'
 
 include: ["_pages"]
 permalink: /:title
@@ -21,11 +37,12 @@ plugins:
 authors:
     chipmaster:
       name:           chipmastervn
-      site:           https://www.facebook.com/chipmastervn
+      site:           welcome-to-chipmastervn
       avatar:         assets/images/avatar1.webp
       bio:            "Truyền cảm hứng, dẫn dắt tương lai: Kiến tạo tri thức về kĩ thuật và công nghệ!"
       email:          wowthemesnet@gmail.com
       instagram:        https://www.instagram.com/chipmastervn/
+      facebook:        https://www.facebook.com/chipmastervn
  
 # Defaults
 defaults:
