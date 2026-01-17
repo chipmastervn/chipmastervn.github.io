@@ -10,19 +10,19 @@ email: 'chipmastervn@gmail.com'
 mailchimp-list: 'https://formspree.io/f/xqakpgyn'
 
 # SEO Settings
-title: 'ChipMasterVN - Embedded Systems & RTOS Blog'
+title: 'chipmastervn'
 tagline: 'Kiến tạo tri thức về kĩ thuật và công nghệ'
-author: 'ChipMasterVN'
+author: 'chipmastervn'
 twitter:
   username: chipmastervn
   card: summary_large_image
 social:
-  name: ChipMasterVN
+  name: chipmastervn
   links:
     - https://www.facebook.com/chipmastervn
     - https://www.instagram.com/chipmastervn/
 defaults_image: assets/images/logo/logo-home.webp
-keywords: 'embedded systems, rtos, iot, lập trình nhúng, arduino, esp32, stm32, firmware'
+keywords: 'embedded systems, rtos, iot, lập trình nhúng, arduino, esp32, stm32, firmware, linux'
 
 include: ["_pages"]
 permalink: /:title
