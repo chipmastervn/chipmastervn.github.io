@@ -1,0 +1,240 @@
+---
+layout: default
+---
+{%- assign nav = site.data.python_dp_nav -%}
+{%- assign current_part = page.part -%}
+
+{%- comment -%} Find prev/next pages across all chapters {%- endcomment -%}
+{%- assign all_pages = "" | split: "" -%}
+{%- for chapter in nav -%}
+  {%- for p in chapter.pages -%}
+    {%- assign all_pages = all_pages | push: p -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+{%- assign prev_page = nil -%}
+{%- assign next_page = nil -%}
+{%- for p in all_pages -%}
+  {%- if p.part == current_part -%}
+    {%- assign idx = forloop.index0 -%}
+    {%- if idx > 0 -%}
+      {%- assign prev_idx = idx | minus: 1 -%}
+      {%- assign prev_page = all_pages[prev_idx] -%}
+    {%- endif -%}
+    {%- assign next_idx = idx | plus: 1 -%}
+    {%- assign next_page = all_pages[next_idx] -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<!-- Sidebar toggle injected into navbar left slot via JS on mobile -->
+
+<!-- Fixed sidebar toggle button (mobile only) -->
+<button class="docs-fab-toggle d-lg-none" id="sidebarToggle" aria-label="Mở menu">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- Overlay when sidebar open on mobile -->
+<div class="docs-overlay" id="docsOverlay"></div>
+
+<div class="docs-wrapper">
+
+  <!-- Left Sidebar Navigation -->
+  <aside class="docs-sidebar" id="docsSidebar" aria-label="Documentation navigation">
+    <div class="docs-sidebar-inner">
+      <div class="docs-sidebar-header">
+        <a href="{{ site.baseurl }}/python-design-patterns" class="docs-brand">
+          <span class="docs-brand-icon">🐍</span>
+          <span class="docs-brand-text">Python Design Patterns</span>
+        </a>
+        <button class="docs-sidebar-toggle d-lg-none" id="sidebarToggle" aria-label="Toggle sidebar">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      {% include docs-sidebar.html nav=nav current_part=current_part %}
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="docs-main" id="docsMain">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="docs-breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ site.baseurl }}/">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ site.baseurl }}/python-design-patterns">Python Design Patterns</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ page.title | truncate: 60 }}</li>
+    </ol>
+    </nav>
+
+    <div class="docs-content-wrapper">
+
+      <div class="docs-body">
+
+        <!-- Article -->
+        <article class="docs-article">
+          <header class="docs-article-header">
+            <div class="docs-chapter-label">
+              {% for chapter in nav %}
+                {% for p in chapter.pages %}
+                  {% if p.part == current_part %}
+                    Chương {{ chapter.chapter }} — {{ chapter.title }}
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
+            </div>
+            <h1 class="docs-article-title">{{ page.title }}</h1>
+            <div class="docs-article-meta">
+              <span><i class="fas fa-calendar-alt"></i> {{ page.date | date: "%d/%m/%Y" }}</span>
+              <span class="ml-3"><i class="fas fa-book-open"></i> Phần {{ page.part }}</span>
+            </div>
+          </header>
+
+          <div class="docs-article-content">
+            {{ content }}
+          </div>
+
+          <!-- Tags -->
+          {% if page.tags %}
+          <div class="docs-tags">
+            {% for tag in page.tags %}
+              <a class="docs-tag" href="{{ site.baseurl }}/tags.html#{{ tag | downcase }}">{{ tag }}</a>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </article>
+
+        <!-- Prev / Next navigation -->
+        <nav class="docs-pagination" aria-label="Page navigation">
+          <div class="docs-pagination-prev">
+            {% if prev_page %}
+            <a href="{{ site.baseurl }}{{ prev_page.url }}" class="docs-page-link">
+              <span class="docs-page-direction"><i class="fas fa-arrow-left"></i> Bài trước</span>
+              <span class="docs-page-title">{{ prev_page.title }}</span>
+            </a>
+            {% endif %}
+          </div>
+          <div class="docs-pagination-next">
+            {% if next_page %}
+            <a href="{{ site.baseurl }}{{ next_page.url }}" class="docs-page-link">
+              <span class="docs-page-direction">Bài tiếp <i class="fas fa-arrow-right"></i></span>
+              <span class="docs-page-title">{{ next_page.title }}</span>
+            </a>
+            {% endif %}
+          </div>
+        </nav>
+
+        <!-- Newsletter -->
+        {% if site.mailchimp-list %}
+        <div class="docs-subscribe border p-4 mt-4 bg-lightblue rounded">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-md-6 mb-2 mb-md-0">
+              <h6 class="font-weight-bold mb-1">Đăng ký nhận Newsletter</h6>
+              <small class="text-muted">Cập nhật bài viết mới nhất!</small>
+            </div>
+            <div class="col-md-6">
+              <form action="{{ site.mailchimp-list }}" method="POST" class="w-100">
+                <div class="input-group">
+                  <input class="form-control form-control-sm" type="email" name="_replyto" placeholder="Email của bạn" required>
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-success btn-sm">Đăng ký</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+      </div><!-- /.docs-body -->
+
+      <!-- Right TOC -->
+      <aside class="docs-toc d-none d-xl-block" aria-label="Table of contents">
+        <div class="docs-toc-inner">
+          <h6 class="docs-toc-title">Nội dung trang</h6>
+          <div id="docsToc" class="docs-toc-list"></div>
+          <hr class="mt-3">
+          <div class="docs-toc-share">
+            <small class="text-muted d-block mb-2">Chia sẻ</small>
+            <div class="a2a_kit a2a_kit_size_24 a2a_default_style">
+              <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+              <a class="a2a_button_facebook"></a>
+              <a class="a2a_button_twitter"></a>
+            </div>
+            <script async src="https://static.addtoany.com/menu/page.js"></script>
+          </div>
+        </div>
+      </aside>
+
+    </div><!-- /.docs-content-wrapper -->
+  </main>
+
+</div><!-- /.docs-wrapper -->
+
+<script>
+// Auto-build TOC from article headings
+(function() {
+  var content = document.querySelector('.docs-article-content');
+  var tocEl = document.getElementById('docsToc');
+  if (!content || !tocEl) return;
+
+  var headings = content.querySelectorAll('h2, h3');
+  if (headings.length === 0) return;
+
+  var ul = document.createElement('ul');
+  ul.className = 'docs-toc-nav';
+  headings.forEach(function(h, i) {
+    if (!h.id) h.id = 'heading-' + i;
+    var li = document.createElement('li');
+    li.className = h.tagName === 'H3' ? 'docs-toc-item docs-toc-h3' : 'docs-toc-item docs-toc-h2';
+    var a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    ul.appendChild(li);
+  });
+  tocEl.appendChild(ul);
+
+  // Highlight active heading on scroll
+  var tocLinks = tocEl.querySelectorAll('a');
+  window.addEventListener('scroll', function() {
+    var scrollY = window.scrollY + 100;
+    var active = null;
+    headings.forEach(function(h) {
+      if (h.offsetTop <= scrollY) active = h.id;
+    });
+    tocLinks.forEach(function(a) {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + active);
+    });
+  }, { passive: true });
+})();
+
+// Sidebar toggle
+(function() {
+  var btn = document.getElementById('sidebarToggle');
+  var sidebar = document.getElementById('docsSidebar');
+  var overlay = document.getElementById('docsOverlay');
+  if (!btn || !sidebar) return;
+
+  function openSidebar() {
+    sidebar.classList.add('docs-sidebar-open');
+    if (overlay) overlay.classList.add('docs-overlay-show');
+    document.body.style.overflow = 'hidden';
+    btn.classList.add('is-open');
+  }
+  function closeSidebar() {
+    sidebar.classList.remove('docs-sidebar-open');
+    if (overlay) overlay.classList.remove('docs-overlay-show');
+    document.body.style.overflow = '';
+    btn.classList.remove('is-open');
+  }
+
+  btn.addEventListener('click', function() {
+    sidebar.classList.contains('docs-sidebar-open') ? closeSidebar() : openSidebar();
+  });
+  if (overlay) overlay.addEventListener('click', closeSidebar);
+  sidebar.querySelectorAll('.docs-nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (window.innerWidth < 992) closeSidebar();
+    });
+  });
+})();
+</script>

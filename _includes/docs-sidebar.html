@@ -1,0 +1,56 @@
+<nav class="docs-nav">
+  {% for chapter in include.nav %}
+  {%- assign is_active_chapter = false -%}
+  {%- for p in chapter.pages -%}
+    {%- if p.part == include.current_part -%}
+      {%- assign is_active_chapter = true -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  <div class="docs-nav-section {% if is_active_chapter %}docs-nav-section-open{% endif %}">
+    <button class="docs-nav-chapter" aria-expanded="{{ is_active_chapter }}" data-target="chapter-{{ chapter.chapter }}">
+      <span class="docs-nav-chapter-num">{{ chapter.chapter | prepend: "0" | slice: -2, 2 }}</span>
+      <span class="docs-nav-chapter-title">{{ chapter.title }}</span>
+      <i class="fas fa-chevron-right docs-nav-arrow"></i>
+    </button>
+    <ul class="docs-nav-pages" id="chapter-{{ chapter.chapter }}" {% unless is_active_chapter %}style="display:none"{% endunless %}>
+      {% for p in chapter.pages %}
+      <li class="docs-nav-item {% if p.part == include.current_part %}docs-nav-item-active{% endif %}">
+        <a href="{{ site.baseurl }}{{ p.url }}" class="docs-nav-link">
+          <span class="docs-nav-part">{{ p.part }}</span>
+          {{ p.title }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</nav>
+
+<script>
+(function() {
+  var buttons = document.querySelectorAll('.docs-nav-chapter');
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var targetId = btn.getAttribute('data-target');
+      var target = document.getElementById(targetId);
+      var section = btn.closest('.docs-nav-section');
+      var isOpen = section.classList.contains('docs-nav-section-open');
+
+      // Close all
+      document.querySelectorAll('.docs-nav-section').forEach(function(s) {
+        s.classList.remove('docs-nav-section-open');
+        s.querySelector('.docs-nav-pages').style.display = 'none';
+        s.querySelector('button').setAttribute('aria-expanded', 'false');
+      });
+
+      // Open clicked (toggle)
+      if (!isOpen) {
+        section.classList.add('docs-nav-section-open');
+        target.style.display = 'block';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+})();
+</script>

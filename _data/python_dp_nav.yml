@@ -1,0 +1,222 @@
+- title: "Giới thiệu"
+  chapter: 1
+  pages:
+    - title: "Giới thiệu Design Patterns"
+      part: 1
+      url: "/python-design-pattern-part-1"
+    - title: "Các Design Patterns trong blog"
+      part: 2
+      url: "/python-design-pattern-part-2"
+
+- title: "Kiến trúc phần mềm"
+  chapter: 2
+  pages:
+    - title: "Tại sao cần kiến trúc phần mềm?"
+      part: 3
+      url: "/python-design-pattern-part-3"
+    - title: "UML trong nghiên cứu Design Patterns"
+      part: 4
+      url: "/python-design-pattern-part-4"
+    - title: "Code có tổ chức và code hỗn loạn"
+      part: 5
+      url: "/python-design-pattern-part-5"
+
+- title: "Thiết lập môi trường & UML"
+  chapter: 3
+  pages:
+    - title: "Thiết lập môi trường Python với VS Code"
+      part: 6
+      url: "/python-design-pattern-part-6"
+    - title: "UML cơ bản: Class Diagram & Sequence Diagram"
+      part: 7
+      url: "/python-design-pattern-part-7"
+
+- title: "OOP trong Python"
+  chapter: 4
+  pages:
+    - title: "Ôn tập Python hướng đối tượng"
+      part: 8
+      url: "/python-design-pattern-part-8"
+    - title: "Interface Contracts và Abstract Classes trong Python"
+      part: 9
+      url: "/python-design-pattern-part-9"
+    - title: "Ví dụ code OOP: Classes và kế thừa"
+      part: 10
+      url: "/python-design-pattern-part-10"
+    - title: "Ví dụ code: Abstract Classes và kỹ thuật nâng cao"
+      part: 11
+      url: "/python-design-pattern-part-11"
+    - title: "Ví dụ code: Encapsulation với BankAccount"
+      part: 12
+      url: "/python-design-pattern-part-12"
+    - title: "Ví dụ code: Interface Contract trong thực tế"
+      part: 13
+      url: "/python-design-pattern-part-13"
+    - title: "Ví dụ code: Interface Contract trong method"
+      part: 14
+      url: "/python-design-pattern-part-14"
+    - title: "Ví dụ code: Abstract Class kết hợp Contract"
+      part: 15
+      url: "/python-design-pattern-part-15"
+
+- title: "SOLID Principles"
+  chapter: 5
+  pages:
+    - title: "Những nguyên tắc tạo nên kiến trúc tốt"
+      part: 16
+      url: "/python-design-pattern-part-16"
+    - title: "SOLID Principles trong lập trình hướng đối tượng"
+      part: 17
+      url: "/python-design-pattern-part-17"
+    - title: "Thực hành SOLID: Single Responsibility Principle"
+      part: 18
+      url: "/python-design-pattern-part-18"
+    - title: "Thực hành SOLID: Open/Closed Principle"
+      part: 19
+      url: "/python-design-pattern-part-19"
+    - title: "Thực hành SOLID: Liskov, Interface Segregation & Dependency Inversion"
+      part: 20
+      url: "/python-design-pattern-part-20"
+    - title: "Thực hành SOLID: Liskov Substitution Principle"
+      part: 21
+      url: "/python-design-pattern-part-21"
+    - title: "Thực hành SOLID: Interface Segregation Principle"
+      part: 22
+      url: "/python-design-pattern-part-22"
+    - title: "Thực hành SOLID: Dependency Inversion Principle"
+      part: 23
+      url: "/python-design-pattern-part-23"
+
+- title: "Singleton Pattern"
+  chapter: 6
+  pages:
+    - title: "Singleton Pattern — Giới thiệu"
+      part: 24
+      url: "/python-design-pattern-part-24"
+    - title: "Singleton Pattern — Các cách triển khai trong Python"
+      part: 25
+      url: "/python-design-pattern-part-25"
+    - title: "Singleton Pattern — Metaclass và Eager Loading chi tiết"
+      part: 26
+      url: "/python-design-pattern-part-26"
+    - title: "Singleton Pattern — Thread Safety"
+      part: 27
+      url: "/python-design-pattern-part-27"
+    - title: "Singleton Pattern — Ví dụ code thực tế"
+      part: 28
+      url: "/python-design-pattern-part-28"
+    - title: "Singleton Pattern — Ứng dụng thực tế: Logger"
+      part: 29
+      url: "/python-design-pattern-part-29"
+    - title: "Bài tập thực hành về Singleton Pattern"
+      part: 30
+      url: "/python-design-pattern-part-30"
+    - title: "Lời giải bài tập về Singleton Pattern"
+      part: 31
+      url: "/python-design-pattern-part-31"
+
+- title: "Factory Method Pattern"
+  chapter: 7
+  pages:
+    - title: "Factory Method Pattern — Giới thiệu"
+      part: 32
+      url: "/python-design-pattern-part-32"
+    - title: "Factory Method Pattern — Kiến trúc và hai biến thể"
+      part: 33
+      url: "/python-design-pattern-part-33"
+    - title: "Factory Method Pattern — Code thực tế: Shape Game"
+      part: 34
+      url: "/python-design-pattern-part-34"
+    - title: "Bài tập thực hành về Factory Method Pattern"
+      part: 35
+      url: "/python-design-pattern-part-35"
+
+- title: "Builder Pattern"
+  chapter: 8
+  pages:
+    - title: "Builder Pattern — Giới thiệu"
+      part: 36
+      url: "/python-design-pattern-part-36"
+    - title: "Builder Pattern — Kiến trúc chi tiết"
+      part: 37
+      url: "/python-design-pattern-part-37"
+    - title: "Builder Pattern — Code thực tế: Sandwich Builder"
+      part: 38
+      url: "/python-design-pattern-part-38"
+    - title: "Bài tập thực hành về Builder Pattern"
+      part: 39
+      url: "/python-design-pattern-part-39"
+
+- title: "Adapter Pattern"
+  chapter: 9
+  pages:
+    - title: "Adapter Pattern — Giới thiệu"
+      part: 40
+      url: "/python-design-pattern-part-40"
+    - title: "Adapter Pattern — Kiến trúc"
+      part: 41
+      url: "/python-design-pattern-part-41"
+    - title: "Adapter Pattern — Ví dụ code"
+      part: 42
+      url: "/python-design-pattern-part-42"
+    - title: "Bài tập thực hành về Adapter Pattern"
+      part: 43
+      url: "/python-design-pattern-part-43"
+
+- title: "Strategy Pattern"
+  chapter: 10
+  pages:
+    - title: "Strategy Pattern — Giới thiệu"
+      part: 44
+      url: "/python-design-pattern-part-44"
+    - title: "Strategy Pattern — Kiến trúc"
+      part: 45
+      url: "/python-design-pattern-part-45"
+    - title: "Strategy Pattern — Ví dụ code"
+      part: 46
+      url: "/python-design-pattern-part-46"
+    - title: "Bài tập thực hành về Strategy Pattern"
+      part: 47
+      url: "/python-design-pattern-part-47"
+
+- title: "Observer Pattern"
+  chapter: 11
+  pages:
+    - title: "Observer Pattern — Giới thiệu"
+      part: 48
+      url: "/python-design-pattern-part-48"
+    - title: "Observer Pattern — Kiến trúc"
+      part: 49
+      url: "/python-design-pattern-part-49"
+    - title: "Observer Pattern — Ví dụ code"
+      part: 50
+      url: "/python-design-pattern-part-50"
+    - title: "Bài tập thực hành về Observer Pattern"
+      part: 51
+      url: "/python-design-pattern-part-51"
+
+- title: "State Pattern"
+  chapter: 12
+  pages:
+    - title: "State Pattern — Giới thiệu"
+      part: 52
+      url: "/python-design-pattern-part-52"
+    - title: "State Pattern — Kiến trúc"
+      part: 53
+      url: "/python-design-pattern-part-53"
+    - title: "State Pattern — Ví dụ code"
+      part: 54
+      url: "/python-design-pattern-part-54"
+    - title: "Bài tập thực hành về State Pattern"
+      part: 55
+      url: "/python-design-pattern-part-55"
+
+- title: "Nâng cao & Bonus"
+  chapter: 13
+  pages:
+    - title: "Các hướng phát triển tiếp theo"
+      part: 58
+      url: "/python-design-pattern-part-58"
+    - title: "Composite Pattern — Bonus"
+      part: 60
+      url: "/python-design-pattern-part-60"

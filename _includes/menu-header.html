@@ -12,6 +12,16 @@
 <li class="nav-item {% if page.url contains 'categories' or page.layout == 'post' %}active{% endif %}">
 <a class="nav-link" href="{{site.baseurl}}/categories.html" aria-label="Blogs và bài viết">Blogs</a>
 </li>
+<li class="nav-item dropdown {% if page.layout == 'docs' or page.url contains 'python-design-pattern' %}active{% endif %}">
+<a class="nav-link dropdown-toggle" href="#" id="docsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Tài liệu">
+  Tài liệu
+</a>
+<div class="dropdown-menu" aria-labelledby="docsDropdown">
+  <a class="dropdown-item" href="{{site.baseurl}}/python-design-patterns" aria-label="Python Design Patterns">
+    🐍 Python Patterns
+  </a>
+</div>
+</li>
 <!-- <li class="nav-item">
 <a target="_blank" class="nav-link" href="https://www.patreon.com/c/chipmastervn" aria-label="Audiobooks">Audiobooks</a>
 </li> -->
